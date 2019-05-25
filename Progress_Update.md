@@ -9,7 +9,7 @@
 ### What will you do this week?
 * Anna : Will design and make world map. The characters will be able to walk around the given map.
 * Amanda : Will design, at least two, main party sprites. The sprites will have several frames for animation. 
-* Courtney: Will desgin skill trees for each class and may start working on overall plot. The skill trees will have necessary descriptions for each ability and subclass. 
+* Courtney: Will design skill trees for each class and may start working on overall plot. The skill trees will have necessary descriptions for each ability and subclass. 
 
 ### Any blocking issues/challenges need to be addressed?
 * Getting the software needed on time 
