@@ -27,11 +27,14 @@
 * The group has also worked on the design document for the game which clarified mechanics of the game as well as system interface design, data design and game design 
 
 ### What will you do this week?
-
+* Anna: Start implementing gear drops. Finalize main menu, world map and dungeon maps and put them together. 
+* Amanda: Continue working on character sprites. 
+* Courtney: Work out the gear values for each character and gear set, as well as gear drop rate and levels. 
 
 ### Any blocking issues/challenges need to be addressed?
-
+* Issues with pushing and pulling Godot projectss to Git. 
 
 ### Link to meeting notes
+https://docs.google.com/document/d/1dd2WsWCyWPMCY5E920rGr2SFd1gphco_tvo1qni0W90/edit?usp=sharing
 ...
 
