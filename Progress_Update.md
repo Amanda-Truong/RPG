@@ -36,5 +36,24 @@
 
 ### Link to meeting notes
 https://docs.google.com/document/d/1dd2WsWCyWPMCY5E920rGr2SFd1gphco_tvo1qni0W90/edit?usp=sharing
+
+## Update #3
+
+### What did your team do last week?
+* Last week the group focused on building on main components of the game and working on the game design.
+* Courtney: Worked on developing the overall plot of the game as well as gear mechanics for characters. 
+* Amanda: Continued to work on developing the spirites. This include sprite animation as well as character equipement.  
+* Anna: Continued to work on the dungeon maps and started linking the scenes together as well as making the world map interactive. 
+
+### What will you do this week?
+* Anna: Start implementing the skill tree as well as the gear drops.  
+* Amanda: Continue working on character sprites. 
+* Courtney: Work on boss values and finalize gear stats for each gear set. 
+
+### Any blocking issues/challenges need to be addressed?
+* None at the moment.
+
+### Link to meeting notes
+https://docs.google.com/document/d/1dd2WsWCyWPMCY5E920rGr2SFd1gphco_tvo1qni0W90/edit?usp=sharing
 ...
 
