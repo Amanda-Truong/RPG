@@ -22,14 +22,14 @@
 [ext_resource path="res://worlditems-green/whiteflowersmany.png" type="Texture" id=20]
 [ext_resource path="res://worlditems-green/mushroomvariety.png" type="Texture" id=21]
 [ext_resource path="res://worlditems-green/mushroomyellow2.png" type="Texture" id=22]
-[ext_resource path="res://KinematicBody2D.gd" type="Script" id=23]
-[ext_resource path="res://sprites/sprite_0.png" type="Texture" id=24]
-[ext_resource path="res://sprites/sprite_1.png" type="Texture" id=25]
-[ext_resource path="res://sprites/sprite_2.png" type="Texture" id=26]
-[ext_resource path="res://sprites/sprite_3.png" type="Texture" id=27]
-[ext_resource path="res://worlditems-green/bush10.png" type="Texture" id=28]
-[ext_resource path="res://lake.tres" type="TileSet" id=29]
-[ext_resource path="res://ForestArea.tres" type="TileSet" id=30]
+[ext_resource path="res://worlditems-green/bush10.png" type="Texture" id=23]
+[ext_resource path="res://lake.tres" type="TileSet" id=24]
+[ext_resource path="res://ForestArea.tres" type="TileSet" id=25]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=26]
+[ext_resource path="res://sprites/sprite_0.png" type="Texture" id=27]
+[ext_resource path="res://sprites/sprite_1.png" type="Texture" id=28]
+[ext_resource path="res://sprites/sprite_2.png" type="Texture" id=29]
+[ext_resource path="res://sprites/sprite_3.png" type="Texture" id=30]
 [ext_resource path="res://tree.tres" type="TileSet" id=31]
 [ext_resource path="res://worlditems-green/raisedgrass.png" type="Texture" id=32]
 [ext_resource path="res://worlditems-green/bush12.png" type="Texture" id=33]
@@ -63,7 +63,7 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "Basic",
 "speed": 5.0
@@ -449,16 +449,33 @@ texture = ExtResource( 3 )
 position = Vector2( 112.5, -140 )
 texture = ExtResource( 21 )
 
+[node name="bush12" type="Sprite" parent="."]
+position = Vector2( 740, 70 )
+texture = ExtResource( 23 )
+
+[node name="bush11" type="Sprite" parent="."]
+position = Vector2( 770, 100 )
+texture = ExtResource( 23 )
+
+[node name="TileMap3" type="TileMap" parent="."]
+tile_set = ExtResource( 24 )
+format = 1
+tile_data = PoolIntArray( 2228267, 0, 0 )
+
+[node name="TileMap4" type="TileMap" parent="."]
+tile_set = ExtResource( 25 )
+format = 1
+tile_data = PoolIntArray( 393222, 94, 0, 458759, 94, 0, 589829, 94, 0, 655366, 94, 0, 655391, 94, 0, 720931, 94, 0, 851991, 96, 0, 851993, 96, 0, 851995, 96, 0, 983068, 94, 0, 1048576, 94, 0, 1114112, 94, 0, 1114113, 94, 0, 1245181, 94, 0, 1179650, 94, 0, 1179651, 97, 0, 1245184, 94, 0, 1310743, 96, 0, 1310744, 94, 0, 1376257, 94, 0, 1376258, 94, 0, 1376261, 97, 0, 1441798, 97, 0, 1966088, 94, 0, 2031661, 94, 0, 2031670, 94, 0, 2097164, 94, 0, 2097197, 94, 0, 2228281, 72, 0, 2293763, 94, 0, 2293813, 72, 0, 2359347, 72, 0, 2424886, 76, 0, 2424888, 76, 0, 2490414, 67, 0, 2490415, 75, 0, 2490426, 74, 0, 2555954, 76, 0, 2621486, 67, 0, 2621489, 72, 0, 2621490, 78, 0, 2621494, 74, 0, 2687021, 67, 0, 2687023, 79, 0, 2752564, 76, 0, 2752567, 75, 0, 2818098, 74, 0, 2818109, 72, 0, 2883590, 71, 0, 2883624, 67, 0, 2883627, 69, 0, 2883631, 72, 0, 2883636, 72, 0, 2949173, 76, 0, 3014703, 72, 0, 3014717, 76, 0, 3145779, 76, 0, 3211306, 77, 0, 3276830, 77, 0, 3342367, 78, 0, 3342374, 72, 0, 3342380, 77, 0, 3538982, 74, 0, 3670043, 79, 0, 3735582, 78, 0 )
+
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 scale = Vector2( 0.8, 0.8 )
-script = ExtResource( 23 )
+script = ExtResource( 26 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 position = Vector2( 1092.5, 225 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 1 )
 animation = "Basic"
-frame = 3
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
@@ -469,24 +486,6 @@ polygon = PoolVector2Array( 840, 70, 900, 70, 900, 180, 872, 180, 840, 180, 842.
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 anchor_mode = 0
 current = true
-
-[node name="bush12" type="Sprite" parent="."]
-position = Vector2( 740, 70 )
-texture = ExtResource( 28 )
-
-[node name="bush11" type="Sprite" parent="."]
-position = Vector2( 770, 100 )
-texture = ExtResource( 28 )
-
-[node name="TileMap3" type="TileMap" parent="."]
-tile_set = ExtResource( 29 )
-format = 1
-tile_data = PoolIntArray( 2228267, 0, 0 )
-
-[node name="TileMap4" type="TileMap" parent="."]
-tile_set = ExtResource( 30 )
-format = 1
-tile_data = PoolIntArray( 393222, 94, 0, 458759, 94, 0, 589829, 94, 0, 655366, 94, 0, 655391, 94, 0, 720931, 94, 0, 851991, 96, 0, 851993, 96, 0, 851995, 96, 0, 983068, 94, 0, 1048576, 94, 0, 1114112, 94, 0, 1114113, 94, 0, 1245181, 94, 0, 1179650, 94, 0, 1179651, 97, 0, 1245184, 94, 0, 1310743, 96, 0, 1310744, 94, 0, 1376257, 94, 0, 1376258, 94, 0, 1376261, 97, 0, 1441798, 97, 0, 1966088, 94, 0, 2031661, 94, 0, 2031670, 94, 0, 2097164, 94, 0, 2097197, 94, 0, 2228281, 72, 0, 2293763, 94, 0, 2293813, 72, 0, 2359347, 72, 0, 2424886, 76, 0, 2424888, 76, 0, 2490414, 67, 0, 2490415, 75, 0, 2490426, 74, 0, 2555954, 76, 0, 2621486, 67, 0, 2621489, 72, 0, 2621490, 78, 0, 2621494, 74, 0, 2687021, 67, 0, 2687023, 79, 0, 2752564, 76, 0, 2752567, 75, 0, 2818098, 74, 0, 2818109, 72, 0, 2883590, 71, 0, 2883624, 67, 0, 2883627, 69, 0, 2883631, 72, 0, 2883636, 72, 0, 2949173, 76, 0, 3014703, 72, 0, 3014717, 76, 0, 3145779, 76, 0, 3211306, 77, 0, 3276830, 77, 0, 3342367, 78, 0, 3342374, 72, 0, 3342380, 77, 0, 3538982, 74, 0, 3670043, 79, 0, 3735582, 78, 0 )
 
 [node name="TileMap2" type="TileMap" parent="."]
 position = Vector2( 0, 1 )
@@ -513,11 +512,11 @@ texture = ExtResource( 34 )
 
 [node name="bush10" type="Sprite" parent="bush15"]
 position = Vector2( 24.5, -100 )
-texture = ExtResource( 28 )
+texture = ExtResource( 23 )
 
 [node name="bush10" type="Sprite" parent="."]
 position = Vector2( 756, 150 )
-texture = ExtResource( 28 )
+texture = ExtResource( 23 )
 
 [node name="bush9" type="Sprite" parent="."]
 position = Vector2( 775.5, -20 )
@@ -526,7 +525,7 @@ texture = ExtResource( 35 )
 [node name="bush16" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 710.5, 220 )
-texture = ExtResource( 28 )
+texture = ExtResource( 23 )
 
 [node name="bush8" type="Sprite" parent="bush16"]
 position = Vector2( 659.5, 180 )
@@ -554,7 +553,7 @@ texture = ExtResource( 34 )
 
 [node name="bush20" type="Sprite" parent="."]
 position = Vector2( 500, 570 )
-texture = ExtResource( 28 )
+texture = ExtResource( 23 )
 
 [node name="raisedgrass" type="Sprite" parent="."]
 position = Vector2( 100, 1000 )
@@ -590,7 +589,7 @@ texture = ExtResource( 32 )
 
 [node name="bush21" type="Sprite" parent="."]
 position = Vector2( 780, 404.5 )
-texture = ExtResource( 28 )
+texture = ExtResource( 23 )
 
 [node name="raisedgrass9" type="Sprite" parent="."]
 position = Vector2( 420, 1020 )
@@ -619,7 +618,7 @@ texture = ExtResource( 32 )
 
 [node name="bush13" type="Sprite" parent="."]
 position = Vector2( 510, 939.5 )
-texture = ExtResource( 28 )
+texture = ExtResource( 23 )
 
 [node name="bush22" type="Sprite" parent="."]
 position = Vector2( 338, 949.5 )
@@ -631,7 +630,7 @@ texture = ExtResource( 33 )
 
 [node name="bush23" type="Sprite" parent="."]
 position = Vector2( 460, 1130 )
-texture = ExtResource( 28 )
+texture = ExtResource( 23 )
 
 [node name="bush24" type="Sprite" parent="."]
 position = Vector2( 490, 1160 )
@@ -859,7 +858,7 @@ texture = ExtResource( 53 )
 
 [node name="bush30" type="Sprite" parent="."]
 position = Vector2( 810, 3520 )
-texture = ExtResource( 28 )
+texture = ExtResource( 23 )
 
 [node name="bush31" type="Sprite" parent="."]
 position = Vector2( 840, 3530 )

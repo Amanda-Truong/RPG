@@ -13,7 +13,7 @@ func _ready():
 	pass # Replace with function body.
 
 func NewGame(): 
-	get_tree().change_scene("res://WorldMap.tscn")
+	get_tree().change_scene("res://CharSelect.tscn")
 	pass 
 func Load():
 	get_tree().change_scene("res://LoadGame.tscn")
