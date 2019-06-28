@@ -1,0 +1,364 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://battle/BattleScene.gd" type="Script" id=1]
+[ext_resource path="res://landtileset.tres" type="TileSet" id=2]
+[ext_resource path="res://tree.tres" type="TileSet" id=3]
+[ext_resource path="res://sprites/fighter/fighter stand3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/fighter/fighter stand4.png" type="Texture" id=5]
+[ext_resource path="res://battle/fighter.gd" type="Script" id=6]
+[ext_resource path="res://sprites/archer/3.png" type="Texture" id=7]
+[ext_resource path="res://sprites/archer/2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/archer/1.png" type="Texture" id=9]
+[ext_resource path="res://battle/archer.gd" type="Script" id=10]
+[ext_resource path="res://sprites/caster/1.png" type="Texture" id=11]
+[ext_resource path="res://sprites/caster/2.png" type="Texture" id=12]
+[ext_resource path="res://sprites/caster/3.png" type="Texture" id=13]
+[ext_resource path="res://battle/caster.gd" type="Script" id=14]
+[ext_resource path="res://sprites/healer/1.png" type="Texture" id=15]
+[ext_resource path="res://sprites/healer/2.png" type="Texture" id=16]
+[ext_resource path="res://sprites/healer/3.png" type="Texture" id=17]
+[ext_resource path="res://battle/healer.gd" type="Script" id=18]
+[ext_resource path="res://boss/forest/Treeguard.png" type="Texture" id=19]
+[ext_resource path="res://battle/Treeguard.gd" type="Script" id=20]
+[ext_resource path="res://fonts/Roboto-BlackItalic.ttf" type="DynamicFontData" id=21]
+[ext_resource path="res://battle/treeHit.gd" type="Script" id=22]
+[ext_resource path="res://menu/visual/dialogue.png" type="Texture" id=23]
+[ext_resource path="res://menu/visual/portrait.png" type="Texture" id=24]
+[ext_resource path="res://sprites/fighter/head.png" type="Texture" id=25]
+[ext_resource path="res://sprites/archer/head.png" type="Texture" id=26]
+[ext_resource path="res://sprites/caster/head.png" type="Texture" id=27]
+[ext_resource path="res://sprites/healer/head.png" type="Texture" id=28]
+[ext_resource path="res://boss/forest/head.png" type="Texture" id=29]
+[ext_resource path="res://fonts/Roboto-Black.ttf" type="DynamicFontData" id=30]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+outline_color = Color( 0.847059, 0.0745098, 0.0745098, 1 )
+font_data = ExtResource( 21 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = ExtResource( 30 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+font_data = ExtResource( 30 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 12
+extra_spacing_char = 3
+font_data = ExtResource( 30 )
+
+[sub_resource type="DynamicFont" id=9]
+extra_spacing_char = 5
+font_data = ExtResource( 30 )
+
+[node name="BattleScene" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+editor/display_folded = true
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 92, 92 )
+format = 1
+tile_data = PoolIntArray( -131077, 2, 0, -131076, 2, 0, -131075, 2, 0, -131074, 2, 0, -131073, 2, 0, -196608, 2, 0, -196607, 2, 0, -196606, 2, 0, -196605, 2, 0, -196604, 2, 0, -196603, 2, 0, -196602, 2, 0, -196601, 2, 0, -196600, 2, 0, -196599, 2, 0, -196598, 2, 0, -196597, 2, 0, -196596, 2, 0, -196595, 2, 0, -196594, 2, 0, -196593, 2, 0, -196592, 2, 0, -196591, 2, 0, -196590, 2, 0, -65541, 2, 0, -65540, 2, 0, -65539, 2, 0, -65538, 2, 0, -65537, 2, 0, -131072, 2, 0, -131071, 2, 0, -131070, 2, 0, -131069, 2, 0, -131068, 2, 0, -131067, 2, 0, -131066, 2, 0, -131065, 2, 0, -131064, 2, 0, -131063, 2, 0, -131062, 2, 0, -131061, 2, 0, -131060, 2, 0, -131059, 2, 0, -131058, 2, 0, -131057, 2, 0, -131056, 2, 0, -131055, 2, 0, -131054, 2, 0, -5, 2, 0, -4, 2, 0, -3, 2, 0, -2, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 2, 0, -65525, 2, 0, -65524, 2, 0, -65523, 2, 0, -65522, 2, 0, -65521, 2, 0, -65520, 2, 0, -65519, 2, 0, -65518, 2, 0, 65531, 2, 0, 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 2, 0, 12, 2, 0, 13, 2, 0, 14, 2, 0, 15, 2, 0, 16, 2, 0, 17, 2, 0, 18, 2, 0, 131067, 2, 0, 131068, 2, 0, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 2, 0, 65550, 2, 0, 65551, 2, 0, 65552, 2, 0, 65553, 2, 0, 65554, 2, 0, 196603, 2, 0, 196604, 2, 0, 196605, 2, 0, 196606, 2, 0, 196607, 2, 0, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131082, 2, 0, 131083, 2, 0, 131084, 2, 0, 131085, 2, 0, 131086, 2, 0, 131087, 2, 0, 131088, 2, 0, 131089, 2, 0, 131090, 2, 0, 262139, 2, 0, 262140, 2, 0, 262141, 2, 0, 262142, 2, 0, 262143, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 196614, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 2, 0, 196619, 2, 0, 196620, 2, 0, 196621, 2, 0, 196622, 2, 0, 196623, 2, 0, 196624, 2, 0, 196625, 2, 0, 196626, 2, 0, 327675, 2, 0, 327676, 2, 0, 327677, 2, 0, 327678, 2, 0, 327679, 2, 0, 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 2, 0, 262155, 2, 0, 262156, 2, 0, 262157, 2, 0, 262158, 2, 0, 262159, 2, 0, 262160, 2, 0, 262161, 2, 0, 262162, 2, 0, 393211, 2, 0, 393212, 2, 0, 393213, 2, 0, 393214, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 2, 0, 327694, 2, 0, 327695, 2, 0, 327696, 2, 0, 327697, 2, 0, 327698, 2, 0, 458747, 2, 0, 458748, 2, 0, 458749, 2, 0, 458750, 2, 0, 458751, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 2, 0, 393228, 2, 0, 393229, 2, 0, 393230, 2, 0, 393231, 2, 0, 393232, 2, 0, 393233, 2, 0, 393234, 2, 0, 524283, 2, 0, 524284, 2, 0, 524285, 2, 0, 524286, 2, 0, 524287, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 458765, 2, 0, 458766, 2, 0, 458767, 2, 0, 458768, 2, 0, 458769, 2, 0, 458770, 2, 0, 589819, 2, 0, 589820, 2, 0, 589821, 2, 0, 589822, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 524300, 2, 0, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0, 524304, 2, 0, 524305, 2, 0, 524306, 2, 0, 655355, 2, 0, 655356, 2, 0, 655357, 2, 0, 655358, 2, 0, 655359, 2, 0, 589824, 2, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0, 589840, 2, 0, 589841, 2, 0, 589842, 2, 0, 720891, 2, 0, 720892, 2, 0, 720893, 2, 0, 720894, 2, 0, 720895, 2, 0, 655360, 2, 0, 655361, 2, 0, 655362, 2, 0, 655363, 2, 0, 655364, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0, 655378, 2, 0 )
+
+[node name="TileMap" type="TileMap" parent="TileMap"]
+tile_set = ExtResource( 3 )
+format = 1
+tile_data = PoolIntArray( -262142, 4, 0, -262141, 4, 0, -262140, 4, 0, -262139, 4, 0, -262138, 4, 0, -262137, 4, 0, -262136, 4, 0, -262135, 4, 0, -262134, 4, 0, -262133, 4, 0, -262132, 4, 0, -262131, 4, 0, -262126, 4, 0, -262125, 4, 0, -131078, 4, 0, -131077, 4, 0, -131074, 4, 0, -131073, 4, 0, -196608, 4, 0, -196607, 4, 0, -196606, 4, 0, -196605, 4, 0, -196604, 4, 0, -196603, 4, 0, -196602, 4, 0, -196601, 4, 0, -196600, 4, 0, -196599, 4, 0, -196598, 4, 0, -196597, 4, 0, -196596, 4, 0, -196595, 4, 0, -196594, 4, 0, -196593, 4, 0, -196592, 4, 0, -196591, 4, 0, -196590, 4, 0, -196588, 4, 0, -196587, 4, 0, -65540, 4, 0, -65539, 4, 0, -65538, 4, 0, -65537, 4, 0, -131072, 4, 0, -131068, 1, 0, -131067, 1, 0, -131066, 1, 0, -131065, 1, 0, -131064, 1, 0, -131063, 1, 0, -131062, 1, 0, -131061, 1, 0, -131060, 1, 0, -131059, 1, 0, -131058, 1, 0, -131057, 1, 0, -131056, 1, 0, -131055, 1, 0, -131054, 1, 0, -131053, 4, 0, -131050, 4, 0, -131049, 4, 0, -5, 4, 0, -4, 1, 0, -3, 1, 0, -2, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65519, 1, 0, -65518, 4, 0, -65517, 4, 0, -65516, 4, 0, -65514, 4, 0, -65513, 4, 0, 65531, 4, 0, 65532, 4, 0, 65534, 4, 0, 65535, 4, 0, 0, 4, 0, 1, 4, 0, 5, 6, 0, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 14, 4, 0, 15, 4, 0, 16, 4, 0, 18, 1, 0, 19, 6, 0, 20, 4, 0, 22, 4, 0, 23, 4, 0, 24, 4, 0, 131067, 4, 0, 131068, 4, 0, 131069, 1, 0, 131070, 4, 0, 131071, 4, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 65551, 1, 0, 65553, 4, 0, 65554, 4, 0, 65555, 1, 0, 65556, 4, 0, 65557, 4, 0, 65558, 6, 0, 65559, 4, 0, 65560, 4, 0, 196603, 4, 0, 196604, 4, 0, 196605, 1, 0, 196606, 4, 0, 131087, 1, 0, 131090, 4, 0, 131091, 4, 0, 131092, 1, 0, 131094, 6, 0, 131096, 4, 0, 262139, 4, 0, 262141, 1, 0, 262142, 4, 0, 196624, 1, 0, 196626, 4, 0, 196627, 4, 0, 196628, 1, 0, 196629, 1, 0, 196630, 6, 0, 196632, 4, 0, 327675, 4, 0, 327676, 4, 0, 327677, 1, 0, 327678, 4, 0, 262160, 1, 0, 262162, 4, 0, 262163, 4, 0, 262164, 1, 0, 262165, 4, 0, 262166, 6, 0, 262167, 4, 0, 262168, 4, 0, 393211, 4, 0, 393212, 4, 0, 393213, 4, 0, 393214, 4, 0, 327697, 1, 0, 327698, 4, 0, 327699, 4, 0, 327700, 1, 0, 327701, 6, 0, 327702, 4, 0, 327703, 4, 0, 458747, 4, 0, 458748, 4, 0, 458750, 4, 0, 393234, 4, 0, 393235, 1, 0, 393237, 6, 0, 393238, 4, 0, 393239, 4, 0, 524283, 4, 0, 524284, 4, 0, 524286, 4, 0, 458770, 4, 0, 458771, 1, 0, 458772, 6, 0, 458773, 6, 0, 458775, 4, 0, 589819, 4, 0, 589820, 1, 0, 589822, 4, 0, 589823, 1, 0, 524306, 4, 0, 524307, 1, 0, 524308, 6, 0, 524309, 6, 0, 524311, 4, 0, 524312, 4, 0, 655355, 4, 0, 655356, 4, 0, 655357, 1, 0, 655358, 1, 0, 655359, 4, 0, 589824, 1, 0, 589841, 4, 0, 589843, 4, 0, 589844, 6, 0, 589845, 6, 0, 589847, 4, 0, 589848, 4, 0, 720893, 4, 0, 720895, 1, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655375, 4, 0, 655376, 4, 0, 655377, 4, 0, 655378, 4, 0, 655379, 6, 0, 655380, 6, 0, 655382, 4, 0, 655384, 4, 0, 786426, 4, 0, 786428, 4, 0, 786429, 4, 0, 720896, 4, 0, 720897, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 4, 0, 720904, 4, 0, 720905, 4, 0, 720906, 4, 0, 720907, 4, 0, 720908, 4, 0, 720910, 4, 0, 720911, 4, 0, 720912, 4, 0, 720913, 6, 0, 720914, 6, 0, 720915, 6, 0, 720916, 6, 0, 720917, 4, 0, 720918, 6, 0, 720919, 6, 0, 720920, 4, 0, 851962, 4, 0, 851963, 4, 0, 851964, 4, 0, 851966, 4, 0, 786433, 4, 0, 786434, 1, 0, 786435, 1, 0, 786436, 4, 0, 786437, 4, 0, 786438, 4, 0, 786441, 4, 0, 786442, 4, 0, 786443, 4, 0, 786444, 4, 0, 786445, 4, 0, 786446, 4, 0, 786447, 4, 0, 786448, 4, 0, 786449, 4, 0, 786450, 4, 0, 786451, 4, 0, 786452, 6, 0, 786453, 6, 0, 786454, 6, 0, 786455, 4, 0, 786456, 4, 0, 917500, 4, 0, 917502, 4, 0, 917503, 4, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851983, 4, 0, 851984, 4, 0, 851985, 4, 0, 851988, 4, 0, 851990, 4, 0, 851991, 4, 0, 851992, 4, 0, 983039, 4, 0, 917510, 1, 0, 917523, 4, 0 )
+
+[node name="fighterAtt" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( -5.63696, 3.05176e-005 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="fighterAtt"]
+position = Vector2( 760, 150 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="fighter" type="Sprite" parent="."]
+position = Vector2( 754.363, 150 )
+texture = ExtResource( 4 )
+script = ExtResource( 6 )
+
+[node name="archerAtt" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="archerAtt"]
+position = Vector2( 787, 230 )
+frames = SubResource( 2 )
+frame = 2
+playing = true
+
+[node name="archer" type="Sprite" parent="."]
+position = Vector2( 780.363, 230 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
+
+[node name="casterAtt" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="casterAtt"]
+position = Vector2( 819.808, 300 )
+scale = Vector2( 0.878658, 1 )
+frames = SubResource( 3 )
+animation = "New Anim"
+frame = 1
+playing = true
+
+[node name="caster" type="Sprite" parent="."]
+position = Vector2( 820, 300 )
+texture = ExtResource( 11 )
+script = ExtResource( 14 )
+
+[node name="healerAtt" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( 850, 380 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="healerAtt"]
+frames = SubResource( 4 )
+playing = true
+
+[node name="healer" type="Sprite" parent="."]
+position = Vector2( 850, 381 )
+texture = ExtResource( 15 )
+script = ExtResource( 18 )
+
+[node name="treeguard" type="Sprite" parent="."]
+position = Vector2( 340, 246.998 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
+
+[node name="treeHit" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 510.0
+margin_top = 180.0
+margin_right = 630.0
+margin_bottom = 230.0
+custom_fonts/normal_font = SubResource( 5 )
+text = "-300"
+script = ExtResource( 22 )
+
+[node name="actionPanel" type="Sprite" parent="."]
+position = Vector2( 597.5, 590 )
+scale = Vector2( 3.70769, 2.125 )
+texture = ExtResource( 23 )
+
+[node name="charSelect" type="Sprite" parent="actionPanel"]
+visible = false
+position = Vector2( 3.37137, -131.765 )
+scale = Vector2( 0.355431, 0.741204 )
+texture = ExtResource( 24 )
+
+[node name="fighterSelect" type="Button" parent="actionPanel/charSelect"]
+margin_left = -133.553
+margin_top = -15.8725
+margin_right = -88.5531
+margin_bottom = 16.1275
+
+[node name="head" type="Sprite" parent="actionPanel/charSelect/fighterSelect"]
+position = Vector2( 23.4325, 16.3175 )
+scale = Vector2( 0.775936, 0.758567 )
+texture = ExtResource( 25 )
+
+[node name="archerSelect" type="Button" parent="actionPanel/charSelect"]
+margin_left = -60.7059
+margin_top = -15.8725
+margin_right = -15.7059
+margin_bottom = 16.1275
+
+[node name="head" type="Sprite" parent="actionPanel/charSelect/archerSelect"]
+position = Vector2( 22.7677, 16.5074 )
+scale = Vector2( 0.758689, 0.698387 )
+texture = ExtResource( 26 )
+
+[node name="casterSelect" type="Button" parent="actionPanel/charSelect"]
+margin_left = 9.86472
+margin_top = -15.8725
+margin_right = 54.8647
+margin_bottom = 16.1275
+
+[node name="head" type="Sprite" parent="actionPanel/charSelect/casterSelect"]
+position = Vector2( 24.0325, 16.9524 )
+scale = Vector2( 0.1468, 0.128685 )
+texture = ExtResource( 27 )
+
+[node name="healerSelect" type="Button" parent="actionPanel/charSelect"]
+margin_left = 82.7119
+margin_top = -15.8725
+margin_right = 127.712
+margin_bottom = 16.1275
+
+[node name="head" type="Sprite" parent="actionPanel/charSelect/healerSelect"]
+position = Vector2( 22.9735, 15.7115 )
+scale = Vector2( 0.615862, 0.574203 )
+texture = ExtResource( 28 )
+
+[node name="portrait" type="Sprite" parent="actionPanel"]
+position = Vector2( -136.608, -15.9999 )
+scale = Vector2( 0.0930935, 0.338236 )
+texture = ExtResource( 24 )
+
+[node name="fighterHead" type="Sprite" parent="actionPanel/portrait"]
+visible = false
+position = Vector2( 0.000335693, 6.10352e-005 )
+scale = Vector2( 2.60705, 1.23226 )
+texture = ExtResource( 25 )
+
+[node name="healerHead" type="Sprite" parent="actionPanel/portrait"]
+visible = false
+position = Vector2( -1.397, -1.04746 )
+scale = Vector2( 2.42974, 1.15928 )
+texture = ExtResource( 28 )
+
+[node name="casterHead" type="Sprite" parent="actionPanel/portrait"]
+visible = false
+position = Vector2( -1.44859, -1.93262 )
+scale = Vector2( 0.538331, 0.231192 )
+texture = ExtResource( 27 )
+
+[node name="archerHead" type="Sprite" parent="actionPanel/portrait"]
+visible = false
+position = Vector2( -0.539963, -0.249741 )
+scale = Vector2( 2.79006, 1.32227 )
+texture = ExtResource( 26 )
+
+[node name="bossHead" type="Sprite" parent="actionPanel/portrait"]
+visible = false
+position = Vector2( -0.000350952, 0 )
+scale = Vector2( 0.729083, 0.327773 )
+texture = ExtResource( 29 )
+
+[node name="battlerName" type="RichTextLabel" parent="actionPanel/portrait"]
+margin_left = -159.0
+margin_top = 42.0
+margin_right = 159.0
+margin_bottom = 111.0
+custom_fonts/normal_font = SubResource( 6 )
+text = "Fighter Name"
+
+[node name="battlerHP" type="RichTextLabel" parent="actionPanel/portrait"]
+margin_left = -86.9153
+margin_top = 111.0
+margin_right = 174.085
+margin_bottom = 153.0
+custom_fonts/normal_font = SubResource( 7 )
+text = "HP :    250 / 250"
+
+[node name="skillBranch" type="Sprite" parent="actionPanel"]
+position = Vector2( 19.5541, 18.8235 )
+scale = Vector2( 0.1885, 0.776525 )
+texture = ExtResource( 24 )
+offset = Vector2( -59.2859, -21.3396 )
+
+[node name="branchOne" type="Button" parent="actionPanel/skillBranch"]
+visible = false
+margin_left = -143.692
+margin_top = -54.0
+margin_right = 27.3082
+margin_bottom = -33.0
+custom_fonts/font = SubResource( 8 )
+text = "Paladin"
+
+[node name="branchTwo" type="Button" parent="actionPanel/skillBranch"]
+visible = false
+margin_left = -144.0
+margin_top = -31.7879
+margin_right = 27.0
+margin_bottom = -9.78793
+custom_fonts/font = SubResource( 8 )
+text = "Warrior"
+
+[node name="branchThree" type="Button" parent="actionPanel/skillBranch"]
+visible = false
+margin_left = -144.0
+margin_top = -8.5759
+margin_right = 27.0
+margin_bottom = 12.4241
+custom_fonts/font = SubResource( 8 )
+text = "Dark Night"
+
+[node name="skillChoice" type="Sprite" parent="actionPanel"]
+position = Vector2( 106.94, 18.7206 )
+scale = Vector2( 0.197244, 0.776525 )
+texture = ExtResource( 24 )
+offset = Vector2( -59.2859, -21.3396 )
+
+[node name="choiceOne" type="Button" parent="actionPanel/skillChoice"]
+visible = false
+margin_left = -150.413
+margin_top = -30.9259
+margin_right = 40.5865
+margin_bottom = -5.9259
+custom_fonts/font = SubResource( 9 )
+text = "Taunt"
+
+[node name="actionChoice" type="Sprite" parent="actionPanel"]
+position = Vector2( -66.7531, 18.7206 )
+scale = Vector2( 0.197244, 0.776525 )
+texture = ExtResource( 24 )
+offset = Vector2( -59.2859, -21.3396 )
+
+[node name="attack" type="Button" parent="actionPanel/actionChoice"]
+margin_left = -150.413
+margin_top = -18.0481
+margin_right = 40.5872
+margin_bottom = 6.9519
+custom_fonts/font = SubResource( 9 )
+text = "Attack"
+
+[node name="skill" type="Button" parent="actionPanel/actionChoice"]
+margin_left = -150.413
+margin_top = -48.3489
+margin_right = 40.5872
+margin_bottom = -23.3489
+custom_fonts/font = SubResource( 9 )
+text = "Skill"
+
+[node name="bossAttack" type="Label" parent="actionPanel"]
+visible = false
+margin_left = -107.0
+margin_top = -14.0
+margin_right = 144.0
+margin_bottom = 15.0
+align = 1
+valign = 1
