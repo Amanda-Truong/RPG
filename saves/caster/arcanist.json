@@ -1,0 +1,13 @@
+{
+  "charge": "true",
+  "boost": "true",
+  "focus": "false",
+  "spark": "false",
+  "haste": "false",
+  "blast": "false",
+  "boostaga": "false",
+  "focusaga": "false",
+  "shatter": "false",
+  "hastaga": "false",
+  "godhood": "false"
+}

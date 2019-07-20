@@ -1,0 +1,13 @@
+{
+  "poisonArrow" : "true",
+  "barbedArrow" : "true", 
+  "prepare" : "false", 
+  "venomous" : "false",
+  "bloodArrow" : "false",
+  "dippedArrow" : "false", 
+  "bleed" : "false",
+  "nightShade" : "false", 
+  "caustic" : "false", 
+  "flamingArrow" : "false", 
+  "assassinate" : "false"
+}

@@ -1,0 +1,13 @@
+{
+  "silence": "true",
+  "poison": "true",
+  "vampire": "false",
+  "shock": "false",
+  "leech": "false",
+  "bolt": "false",
+  "toxic": "false",
+  "hush": "false",
+  "poisonaga": "false",
+  "silencaga": "false",
+  "reaper": "false"
+}

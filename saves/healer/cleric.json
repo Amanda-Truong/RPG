@@ -1,0 +1,13 @@
+{
+  "regen" : "true",
+  "prepare" : "true",
+  "esuna" : "false", 
+  "raise" : "false", 
+  "aspected" : "false", 
+  "addle" : "false", 
+  "refresh": "false", 
+  "fullRegen": "false", 
+  "aero" : "false", 
+  "smite" : "false", 
+  "arise" : "false"
+}

@@ -1,0 +1,13 @@
+{
+  "galvanize" : "true",
+  "succor" : "true",
+  "resurect" : "false", 
+  "tacticalShield" : "false", 
+  "disease" : "false", 
+  "vex" : "false", 
+  "recharge": "false", 
+  "emergency": "false", 
+  "clone" : "false", 
+  "protect" : "false", 
+  "reset" : "false"
+}

@@ -1,0 +1,13 @@
+{
+  "barrageI" : "true",
+  "straightShot" : "true", 
+  "quickDraw" : "false", 
+  "fireArrow" : "false",
+  "scatterShot" : "false",
+  "multiShot" : "false", 
+  "splitArrow" : "false",
+  "killShot" : "false", 
+  "barrageII" : "false", 
+  "sendOff" : "false", 
+  "rainOfDeath" : "false"
+}

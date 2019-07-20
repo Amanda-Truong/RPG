@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://visual components/gear/Gear/21.png" type="Texture" id=1]
+
+[node name="SkillTree" type="Node2D"]
+
+[node name="backGround" type="Sprite" parent="."]
+position = Vector2( 584.253, 339.64 )
+scale = Vector2( 2.69111, 1.81113 )
+texture = ExtResource( 1 )

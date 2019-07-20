@@ -1,0 +1,13 @@
+{
+  "shelter": "true",
+  "enrage": "true",
+  "quick": "false",
+  "inspire": "false",
+  "soulBind": "false",
+  "shield": "false",
+  "ragingBeast": "false",
+  "sleepingBeast": "false",
+  "roar": "false",
+  "steel": "false",
+  "vengence": "false"
+}

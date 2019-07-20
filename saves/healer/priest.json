@@ -1,0 +1,13 @@
+{
+  "cure" : "true",
+  "cura" : "true",
+  "focus" : "false", 
+  "revive" : "false", 
+  "curega" : "false", 
+  "cureja" : "false", 
+  "magicMissle": "false", 
+  "bane": "false", 
+  "silence" : "false", 
+  "holy" : "false", 
+  "fullHeal" : "false"
+}

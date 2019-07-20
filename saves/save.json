@@ -1,0 +1,8 @@
+{
+  "casterName" : "defaultCaster", 
+  "archerName" : "defaultArcher", 
+  "fighterName": "defaultFighter", 
+  "healerName" : "defaultHealer", 
+  "level" : "0", 
+  "skillPoints" : "0"
+}

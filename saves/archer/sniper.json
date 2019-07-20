@@ -1,0 +1,13 @@
+{
+  "powerShotI" : "true",
+  "mark" : "true", 
+  "strengthen" : "false", 
+  "tripleArrow " : "false",
+  "quickShot" : "false",
+  "strike" : "false", 
+  "sharpShooter" : "false",
+  "doubleArrow" : "false", 
+  "powerShotII" : "false", 
+  "ragingStrike" : "false", 
+  "eagleEye" : "false"
+}

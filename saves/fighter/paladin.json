@@ -1,0 +1,13 @@
+{
+  "taunt": "true", 
+  "shield" : "false", 
+  "reprisal": "false", 
+  "pray" : "false", 
+  "shieldBash" : "false",
+  "slash" : "false", 
+  "sentinal" : "false", 
+  "bladeDance" : "false", 
+  "cover" : "false", 
+  "stead" : "false", 
+  "wall" : "false"
+}
