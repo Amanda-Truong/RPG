@@ -19,10 +19,11 @@ The sprites for Zaletros were developed in Aseprite while world areas and contro
 ## Deliverables 
 
 Currently available: 
-1. User roaming around the map, entering dungeon or boss areas. 
-2. User can encounter random  monster battles.  
-3. User can follow the story to unlock new 
-4. User spending their skill points to unlock new skills.
+1.  [Project documentation](https://github.com/Amanda-Truong/Zaletros_RPG_Project/blob/master/Docs/project%20docs/SDD.docx)
+2. User roaming around the map, entering dungeon or boss areas. 
+3. User can encounter random  monster battles.  
+4. User can follow the story to unlock new 
+5. User spending their skill points to unlock new skills.
 
 Currently in development:  
 1. User can equip gear.
