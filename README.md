@@ -48,6 +48,7 @@ Make it short and interesting.
 
 ## Team members
 
-* Roger Federer, Team Lead
-* Tiger Woods, Bug Fixer
+* Courtney Higgins, Main Game Designer
+* Anna Khachaturova, Main Developer
+* Amanda Truong, Main Graphic Designer
 
