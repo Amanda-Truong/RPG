@@ -48,12 +48,7 @@ Features still in developement:
 
 ## Demo video 
 
-Upload your demo video to youtube and put a link here. Basically, the video content is very much like the quick live demo you gave during your final presentation with the followings:
-1. Project description
-2. How to run the app
-3. Quick walkthrough of all the features of your app
-
-Make it short and interesting.
+[![Watch the video](https://img.youtube.com/vi/Fh29J6BxrfA/maxresdefault.jpg)](https://youtu.be/Fh29J6BxrfA)
 
 ## Team members
 
