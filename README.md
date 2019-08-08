@@ -26,6 +26,7 @@ Currently in development:
 
 ## Getting Started 
 ### Install
+[![Watch the video](https://img.youtube.com/vi/x8CsxYQJHjk/maxresdefault.jpg)](https://youtu.be/x8CsxYQJHjk)
 
 ### Run
 List the steps on how to run your project
