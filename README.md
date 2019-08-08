@@ -49,6 +49,6 @@ Make it short and interesting.
 ## Team members
 
 * Courtney Higgins, Main Game Designer
-* Anna Khachaturova, Main Developer
+* Anna Khachaturova, Main Game Developer
 * Amanda Truong, Main Graphic Designer
 
