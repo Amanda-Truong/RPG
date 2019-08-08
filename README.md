@@ -26,7 +26,7 @@ Currently in development:
 
 ## Getting Started 
 ### Install
-List the steps on how to install your project
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=x8CsxYQJHjk&feature=youtu.be)
 ### Run
 List the steps on how to run your project
 
