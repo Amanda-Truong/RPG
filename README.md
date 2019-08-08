@@ -5,7 +5,8 @@
 
 Zaletros (pronounced Zaal-leh-trohs) is a turn based RPG game, built in a 2D environment. The player controls a party of four characters, where each has three different subclasses with unique skills to enchance the game play. In the world of Zaletros, the player will battle random monsters and main bosses to unlock new gear sets and skills which will help them progress futher through the story.  
 
-[![Watch the video](https://img.youtube.com/vi/OPa6BqA1X-w/maxresdefault.jpg)](https://youtu.be/OPa6BqA1X-w)
+
+[![Watch the trailer!](https://img.youtube.com/vi/OPa6BqA1X-w/maxresdefault.jpg)](https://youtu.be/OPa6BqA1X-w)
 
 
 ### Why?
