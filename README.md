@@ -29,14 +29,22 @@ Currently in development:
 [![Watch the video](https://img.youtube.com/vi/x8CsxYQJHjk/maxresdefault.jpg)](https://youtu.be/x8CsxYQJHjk)
 
 ### Run
-List the steps on how to run your project
+[![Watch the video](https://img.youtube.com/vi/yyKzufDonoE/maxresdefault.jpg)](https://youtu.be/yyKzufDonoE)
 
 ## Features 
-List all the features of your application
-1. Feature #1
-2. Feature #2
-3. Feature #3 
-...
+
+Features currently available: 
+1. Start the game 
+2. Name the four playable characters 
+3. Enter dungeons or the town  
+4. Battle random monsters 
+5. Battle bosses 
+6. Buy new skills 
+
+Features still in developement: 
+1. Equiping gears 
+2. Saving and loading 
+3. Story content
 
 ## Demo video 
 
