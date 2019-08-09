@@ -1,6 +1,6 @@
 {
   "galvanize" : "true",
-  "succor" : "true",
+  "succor" : "false",
   "resurect" : "false", 
   "tacticalShield" : "false", 
   "disease" : "false", 

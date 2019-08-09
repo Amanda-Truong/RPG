@@ -64,5 +64,5 @@ flat = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="background"]
 position = Vector2( 333.404, -298.121 )
 frames = SubResource( 1 )
-frame = 6
+frame = 4
 playing = true

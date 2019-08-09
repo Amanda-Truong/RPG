@@ -1,8 +1,8 @@
 {
-  "casterName" : "defaultCaster", 
-  "archerName" : "defaultArcher", 
-  "fighterName": "defaultFighter", 
-  "healerName" : "defaultHealer", 
+  "casterName" : "Loki", 
+  "archerName" : "Clint", 
+  "fighterName": "Thor", 
+  "healerName" : "Wanda", 
   "level" : "0", 
   "skillPoints" : "0"
 }

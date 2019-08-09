@@ -1,6 +1,6 @@
 {
   "charge": "true",
-  "boost": "true",
+  "boost": "false",
   "focus": "false",
   "spark": "false",
   "haste": "false",

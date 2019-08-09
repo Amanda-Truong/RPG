@@ -1,7 +1,7 @@
 {
   "counter": "true",
-  "defy": "true",
-  "lifesteal": "true",
+  "defy": "false",
+  "lifesteal": "false",
   "soulter": "false",
   "darkness": "false",
   "vampire": "false",

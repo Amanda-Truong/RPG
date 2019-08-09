@@ -1,19 +1,22 @@
 extends Node
 var type = "caster" 
-var hp 
+var maxHP = 0
+var currentHP = 0
 var att 
-var shield 
-var chanceHit 
-var casterName 
+var order = 0 
+var shield = 0 
+var maxShield = 0 
+var chanceHit = 23
+var casterName = "Caster"
 var potency = 100
 var skillsApplied = [] 
 var subClasses = ["Sorcerer","Warlock", "Arcanist"]
 var skillsAvailable = [] 
-
+var player 
 var sorcererSkills = [] 
 var warlockSkills = [] 
 var arcanistSkills = [] 
-
+var alive = true
 var f 
 
 func _ready():
@@ -46,29 +49,31 @@ func _ready():
 func skillsAvailable(sorcererData, warlockData, arcanistData):
 	for item in sorcererData:
 		if(sorcererData[item] == "true"):
-			skillsAvailable.append(item)
+			
 			var a = "res://skills/character/caster/sorcerer/" + str(item) + ".gd"
 			a = str(a)
 			var temp = load(a).new()
 			
 			sorcererSkills.append(temp)
+			skillsAvailable.append(temp)
 	for item in warlockData:
 		if(warlockData[item] == "true"): 
-			skillsAvailable.append(item) 
+			 
 			
 			var a = "res://skills/character/caster/warlock/" + str(item) + ".gd"
 			a = str(a)
 			var temp = load(a).new()
 			warlockSkills.append(temp)
-			
+			skillsAvailable.append(temp)
 	for item in arcanistData:
 		if(arcanistData[item] == "true"):
-			skillsAvailable.append(item)
+			
 			
 			var a = "res://skills/character/caster/arcanist/" + str(item) + ".gd"
 			a = str(a)
 			var temp = load(a).new()
 			
+			skillsAvailable.append(temp)
 			arcanistSkills.append(temp)
 
 func getSkill(skillName):
@@ -79,7 +84,8 @@ func getSkill(skillName):
 	if skillName == "arcanist":
 		return arcanistSkills
 func setGear(): 
-	hp = 240 
+	maxHP = 240 
+	currentHP = 240
 	att = 7 
 	
 func chanceHit(): 
@@ -88,3 +94,44 @@ func attack():
 	return potency * (att * 0.1)
 func turn(): 
 	print("Caster's turn!") 
+	checkSkillsApplied()
+	checkSkillsCD()
+
+func checkSkillsApplied():
+	for skill in skillsApplied: 
+		if(skill.turns != 0): 
+			skill.turns = skill.turns - 1 
+			skill.skillProcess(player)
+		if(skill.cd == 0): 
+			var i = skillsApplied.find(skill)
+			skillsApplied.remove(i)
+			skill.skillReset(player)
+			
+func checkSkillsCD():
+	for skill in arcanistSkills: 
+		if(skill.cd != 0): 
+			skill.available = false
+			skill.cd = skill.cd - 1
+		if(skill.cd == 0): 
+			skill.available = true
+	for skill in warlockSkills: 
+		if(skill.cd != 0): 
+			skill.available = false
+			skill.cd = skill.cd - 1
+		if(skill.cd == 0): 
+			skill.available = true
+	for skill in sorcererSkills: 
+		if(skill.cd != 0): 
+			skill.available = false
+			skill.cd = skill.cd - 1
+		if(skill.cd == 0): 
+			skill.available = true
+func applySkill(skill): 
+	skillsApplied.append(skill)
+
+##########################################################################################################################
+##########################################################################################################################
+##########################################################################################################################
+
+func hit():
+	return potency * att * 0.1 

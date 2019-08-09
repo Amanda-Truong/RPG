@@ -1,0 +1,81 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/Node2D.gd" type="Script" id=1]
+[ext_resource path="res://backgrounds/background.png" type="Texture" id=2]
+[ext_resource path="res://fonts/fontHover.tres" type="StyleBox" id=3]
+[ext_resource path="res://fonts/fontNormal.tres" type="StyleBox" id=4]
+[ext_resource path="res://fonts/Roboto-Black.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://sprites/fighter/stand.png" type="Texture" id=6]
+[ext_resource path="res://sprites/caster/mage standing sprite.png" type="Texture" id=7]
+[ext_resource path="res://sprites/healer/healerstanding sprite1.png" type="Texture" id=8]
+[ext_resource path="res://sprites/archer/stand.png" type="Texture" id=9]
+
+[sub_resource type="TileSet" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0509804, 0.0470588, 0.101961, 1 )
+corner_detail = 13
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+extra_spacing_top = 4
+extra_spacing_bottom = 1
+font_data = ExtResource( 5 )
+
+[node name="CharSelect" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+format = 1
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 590, 390 )
+texture = ExtResource( 2 )
+
+[node name="nextButton" type="Button" parent="."]
+margin_left = 410.0
+margin_top = 580.0
+margin_right = 840.0
+margin_bottom = 639.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = SubResource( 2 )
+text = "NEXT CHARACTER"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 310.0
+margin_top = 450.0
+margin_right = 950.0
+margin_bottom = 530.0
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+breakpoint_gutter = true
+
+[node name="fighter" type="Sprite" parent="."]
+position = Vector2( 610, 280 )
+scale = Vector2( 2.5, 2.21429 )
+texture = ExtResource( 6 )
+
+[node name="caster" type="Sprite" parent="."]
+visible = false
+position = Vector2( 610, 283 )
+scale = Vector2( 2.125, 1.82609 )
+texture = ExtResource( 7 )
+
+[node name="healer" type="Sprite" parent="."]
+visible = false
+position = Vector2( 610, 270 )
+scale = Vector2( 2.07639, 2.04348 )
+texture = ExtResource( 8 )
+
+[node name="archer" type="Sprite" parent="."]
+visible = false
+position = Vector2( 610, 280 )
+scale = Vector2( 2.64286, 2.35714 )
+texture = ExtResource( 9 )

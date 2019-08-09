@@ -1,21 +1,23 @@
 extends Node
 var type = "fighter"
-var hp 
-var att 
-var shield 
-var chanceHit 
-var fighterName 
-var potency = 30
+var maxHP = 0
+var currentHP = 0
+var att = 70
+var shield = 0
+var maxShield = 0 
+var counter 
+var order = 0 
+var chanceHit = 29
+var fighterName = "Fighter"
+var potency = 1000
 var skillsApplied = [] 
 var subClasses = ["Paladin", "Dark Knight", "Warrior"]
-#specific branch skills available 
 var paladinSkills = [] 
 var darkKnightSkills = [] 
 var warriorSkills = []
-
-# all skills available 
+var player 
 var skillsAvailable = [] 
-
+var alive = true
 var f
 
 
@@ -49,34 +51,34 @@ func _ready():
 func skillsAvailable(paladinData, darkKnightData, warriorData):
 	for item in paladinData:
 		if(paladinData[item] == "true"):
-			skillsAvailable.append(item)
+			
 			var a = "res://skills/character/fighter/paladin/" + str(item) + ".gd"
 			a = str(a)
 			var temp = load(a).new()
 			
 			paladinSkills.append(temp)
+			skillsAvailable.append(temp)
 	for item in darkKnightData:
 		if(darkKnightData[item] == "true"): 
-			skillsAvailable.append(item) 
 			
 			var a = "res://skills/character/fighter/darkKnight/" + str(item) + ".gd"
 			a = str(a)
 			var temp = load(a).new()
 			darkKnightSkills.append(temp)
-			
+			skillsAvailable.append(temp)
 	for item in warriorData:
 		if(warriorData[item] == "true"):
-			skillsAvailable.append(item)
 			
 			var a = "res://skills/character/fighter/warrior/" + str(item) + ".gd"
 			a = str(a)
 			var temp = load(a).new()
 			
 			warriorSkills.append(temp)
-
+			skillsAvailable.append(temp)
 
 func setGear(): 
-	hp = 350 
+	maxHP = 350 
+	currentHP = 350
 	att = 10 
 	
 func chanceHit(): 
@@ -95,7 +97,45 @@ func getSkill(skillName):
 		return darkKnightSkills
 func turn(): 
 	print("Fighter's turn!") 
-	var pray = preload("res://skills/character/fighter/paladin/pray.gd")
-	var reprisal = preload("res://skills/character/fighter/paladin/reprisal.gd") 
-	skillsAvailable = [pray.new(), reprisal.new()]
+	checkSkillsApplied()
+	checkSkillsCD()
+
+func checkSkillsApplied():
+	for skill in skillsApplied: 
+		if(skill.turns != 0): 
+			skill.turns = skill.turns - 1 
+			skill.skillProcess(player)
+		if(skill.cd == 0): 
+			var i = skillsApplied.find(skill)
+			skillsApplied.remove(i)
+			skill.skillReset(player)
+
+func applySkill(skill): 
+	skillsApplied.append(skill)
 	
+func checkSkillsCD():
+	for skill in paladinSkills: 
+		if(skill.cd != 0): 
+			skill.available = false
+			skill.cd = skill.cd - 1
+		if(skill.cd == 0): 
+			skill.available = true
+	for skill in warriorSkills: 
+		if(skill.cd != 0): 
+			skill.available = false
+			skill.cd = skill.cd - 1
+		if(skill.cd == 0): 
+			skill.available = true
+	for skill in darkKnightSkills: 
+		if(skill.cd != 0): 
+			skill.available = false
+			skill.cd = skill.cd - 1
+		if(skill.cd == 0): 
+			skill.available = true
+
+##########################################################################################################################
+##########################################################################################################################
+##########################################################################################################################
+
+func hit():
+	return potency * att * 0.1 

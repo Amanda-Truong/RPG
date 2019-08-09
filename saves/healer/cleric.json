@@ -1,6 +1,6 @@
 {
   "regen" : "true",
-  "prepare" : "true",
+  "prepare" : "false",
   "esuna" : "false", 
   "raise" : "false", 
   "aspected" : "false", 

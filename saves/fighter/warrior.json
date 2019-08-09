@@ -1,6 +1,6 @@
 {
   "shelter": "true",
-  "enrage": "true",
+  "enrage": "false",
   "quick": "false",
   "inspire": "false",
   "soulBind": "false",

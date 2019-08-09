@@ -1,6 +1,6 @@
 {
   "barrageI" : "true",
-  "straightShot" : "true", 
+  "straightShot" : "false", 
   "quickDraw" : "false", 
   "fireArrow" : "false",
   "scatterShot" : "false",

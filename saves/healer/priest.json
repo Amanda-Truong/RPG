@@ -1,6 +1,6 @@
 {
   "cure" : "true",
-  "cura" : "true",
+  "cura" : "false",
   "focus" : "false", 
   "revive" : "false", 
   "curega" : "false", 

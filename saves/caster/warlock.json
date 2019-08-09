@@ -1,6 +1,6 @@
 {
   "silence": "true",
-  "poison": "true",
+  "poison": "false",
   "vampire": "false",
   "shock": "false",
   "leech": "false",

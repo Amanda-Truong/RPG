@@ -1,6 +1,6 @@
 {
   "poisonArrow" : "true",
-  "barbedArrow" : "true", 
+  "barbedArrow" : "false", 
   "prepare" : "false", 
   "venomous" : "false",
   "bloodArrow" : "false",
