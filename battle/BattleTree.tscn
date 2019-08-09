@@ -1,15 +1,122 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://battle/BattleInstance.gd" type="Script" id=1]
 [ext_resource path="res://tilesets/landtileset.tres" type="TileSet" id=2]
-[ext_resource path="res://sprites/boss/tree/tree guardian.png" type="Texture" id=3]
-[ext_resource path="res://sprites/fighter/fighter stand3.png" type="Texture" id=4]
-[ext_resource path="res://sprites/archer/1.png" type="Texture" id=5]
-[ext_resource path="res://sprites/caster/1.png" type="Texture" id=6]
-[ext_resource path="res://sprites/healer/1.png" type="Texture" id=7]
-[ext_resource path="res://menu/visual/dialogue.png" type="Texture" id=8]
-[ext_resource path="res://menu/visual/portrait.png" type="Texture" id=9]
-[ext_resource path="res://menu/visual/select/hand_cursor0000.png" type="Texture" id=10]
+[ext_resource path="res://backgrounds/cave2.png" type="Texture" id=3]
+[ext_resource path="res://backgrounds/Desert Clean.png" type="Texture" id=4]
+[ext_resource path="res://backgrounds/environment_forestbackground.png" type="Texture" id=5]
+[ext_resource path="res://backgrounds/backgroundmain.png" type="Texture" id=6]
+[ext_resource path="res://backgrounds/effects test2 (1).png" type="Texture" id=7]
+[ext_resource path="res://menu/visual/portrait.png" type="Texture" id=8]
+[ext_resource path="res://fonts/Roboto-Bold.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://visual components/gear/Gear/23.png" type="Texture" id=10]
+[ext_resource path="res://visual components/gear/Gear/caster_s Book.png" type="Texture" id=11]
+[ext_resource path="res://visual components/gear/Gear/figher_s gloves.png" type="Texture" id=12]
+[ext_resource path="res://visual components/gear/Gear/figher_s sword shield gear.png" type="Texture" id=13]
+[ext_resource path="res://sprites/monsters/Forest Monsters/green_elemental.png" type="Texture" id=14]
+[ext_resource path="res://sprites/monsters/Forest Monsters/enchanted staff.png" type="Texture" id=15]
+[ext_resource path="res://visual components/misc/hp_bar.png" type="Texture" id=16]
+[ext_resource path="res://backgrounds/hell.png" type="Texture" id=17]
+[ext_resource path="res://sprites/boss/bahamut/bahamut.png" type="Texture" id=18]
+[ext_resource path="res://sprites/boss/tree/tree guardian.png" type="Texture" id=19]
+[ext_resource path="res://sprites/fighter/fighter dead.png" type="Texture" id=20]
+[ext_resource path="res://sprites/fighter/fighter stand3.png" type="Texture" id=21]
+[ext_resource path="res://sprites/fighter/fighter stand4.png" type="Texture" id=22]
+[ext_resource path="res://sprites/archer/1.png" type="Texture" id=23]
+[ext_resource path="res://sprites/archer/2.png" type="Texture" id=24]
+[ext_resource path="res://sprites/archer/3.png" type="Texture" id=25]
+[ext_resource path="res://sprites/caster/1.png" type="Texture" id=26]
+[ext_resource path="res://sprites/caster/2.png" type="Texture" id=27]
+[ext_resource path="res://sprites/caster/3.png" type="Texture" id=28]
+[ext_resource path="res://sprites/healer/healer dead.png" type="Texture" id=29]
+[ext_resource path="res://sprites/healer/1.png" type="Texture" id=30]
+[ext_resource path="res://sprites/healer/2.png" type="Texture" id=31]
+[ext_resource path="res://sprites/healer/3.png" type="Texture" id=32]
+[ext_resource path="res://menu/visual/dialogue.png" type="Texture" id=33]
+[ext_resource path="res://visual components/misc/heart pixel art 16x16.png" type="Texture" id=34]
+[ext_resource path="res://visual components/misc/shield_bar.png" type="Texture" id=35]
+[ext_resource path="res://menu/visual/select/hand_cursor0000.png" type="Texture" id=36]
+[ext_resource path="res://sprites/fighter/head.png" type="Texture" id=37]
+[ext_resource path="res://sprites/healer/head.png" type="Texture" id=38]
+[ext_resource path="res://sprites/archer/head.png" type="Texture" id=39]
+[ext_resource path="res://sprites/caster/mage dead.png" type="Texture" id=40]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 49
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 9 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=7]
+size = 29
+outline_color = Color( 1, 0.0431373, 0.0431373, 1 )
+font_data = ExtResource( 9 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=11]
+size = 11
+font_data = ExtResource( 9 )
+
+[sub_resource type="Shader" id=12]
+
+[sub_resource type="ShaderMaterial" id=13]
+render_priority = 4
+shader = SubResource( 12 )
+
+[sub_resource type="DynamicFont" id=14]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 9
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 18
+font_data = ExtResource( 9 )
 
 [node name="BattleTree" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,48 +125,531 @@ script = ExtResource( 1 )
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 92, 92 )
 format = 1
-tile_data = PoolIntArray( -2, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 2, 0, -65525, 2, 0, -65524, 2, 0, -65523, 2, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 2, 0, 12, 2, 0, 13, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 2, 0, 196606, 2, 0, 196607, 2, 0, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131082, 2, 0, 131083, 2, 0, 131084, 2, 0, 131085, 2, 0, 262142, 2, 0, 262143, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 196614, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 2, 0, 196619, 2, 0, 196620, 2, 0, 196621, 2, 0, 327678, 2, 0, 327679, 2, 0, 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 2, 0, 262155, 2, 0, 262156, 2, 0, 262157, 2, 0, 393214, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 2, 0, 458750, 2, 0, 458751, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 2, 0, 393228, 2, 0, 393229, 2, 0, 524286, 2, 0, 524287, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 458765, 2, 0, 589822, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 524300, 2, 0, 524301, 2, 0, 655358, 2, 0, 655359, 2, 0, 589824, 2, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0 )
+tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131082, 2, 0, 131083, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 196614, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 2, 0, 196619, 2, 0, 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 2, 0, 262155, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 2, 0 )
 
-[node name="treeGuardian" type="Sprite" parent="."]
-position = Vector2( 334.843, 206.775 )
+[node name="cave2" type="Sprite" parent="."]
+position = Vector2( 587.986, 331.776 )
 texture = ExtResource( 3 )
 
-[node name="fighter" type="Sprite" parent="."]
-position = Vector2( 897.463, 47.3352 )
+[node name="Desert Clean" type="Sprite" parent="cave2"]
+visible = false
+position = Vector2( 3.29186, -172.541 )
+scale = Vector2( 0.994694, 1.03413 )
 texture = ExtResource( 4 )
 
-[node name="archer" type="Sprite" parent="."]
-position = Vector2( 928.364, 134.627 )
+[node name="environment_forestbackground" type="Sprite" parent="cave2"]
+position = Vector2( -10.1431, -109.688 )
+scale = Vector2( 1.16518, 1 )
 texture = ExtResource( 5 )
 
-[node name="caster" type="Sprite" parent="."]
-position = Vector2( 966.431, 223.684 )
+[node name="backgroundmain" type="Sprite" parent="cave2"]
+visible = false
+position = Vector2( -6.52948, 250.769 )
 texture = ExtResource( 6 )
 
-[node name="healer" type="Sprite" parent="."]
-position = Vector2( 999.623, 318.96 )
+[node name="effects test2 (1)" type="Sprite" parent="cave2"]
+visible = false
+position = Vector2( 8.56075, -327.783 )
+scale = Vector2( 0.698085, 0.914683 )
 texture = ExtResource( 7 )
 
-[node name="menu" type="Sprite" parent="."]
-position = Vector2( 598.022, 555.573 )
-scale = Vector2( 3.70978, 2.92096 )
+[node name="winBox" type="Sprite" parent="cave2"]
+visible = false
+position = Vector2( 4.18402, -84.0636 )
 texture = ExtResource( 8 )
 
+[node name="gearWon" type="Sprite" parent="cave2"]
+position = Vector2( 12.9317, -76.4823 )
+scale = Vector2( 1.24574, 2.0643 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="cave2/gearWon"]
+margin_left = -94.6454
+margin_top = -32.614
+margin_right = 128.355
+margin_bottom = 28.386
+custom_fonts/font = SubResource( 1 )
+text = "You win the following gear:"
+
+[node name="25" type="Sprite" parent="cave2/gearWon"]
+position = Vector2( -3.27701, 12.1478 )
+scale = Vector2( 0.714093, 0.443097 )
+texture = ExtResource( 10 )
+
+[node name="23" type="Sprite" parent="cave2/gearWon"]
+position = Vector2( -106.735, 13.2778 )
+scale = Vector2( 0.714093, 0.443097 )
+texture = ExtResource( 10 )
+
+[node name="24" type="Sprite" parent="cave2/gearWon"]
+position = Vector2( 107.203, 12.1478 )
+scale = Vector2( 0.714093, 0.443097 )
+texture = ExtResource( 10 )
+
+[node name="caster_s gloves" type="Sprite" parent="cave2/gearWon"]
+position = Vector2( -107.203, 13.8428 )
+scale = Vector2( 0.961636, 0.443097 )
+texture = ExtResource( 11 )
+
+[node name="Caster_s Hat" type="Sprite" parent="cave2/gearWon"]
+position = Vector2( -2.39995, 12.7408 )
+scale = Vector2( 1.47164, 0.689058 )
+texture = ExtResource( 12 )
+
+[node name="figher_s sword shield gear" type="Sprite" parent="cave2/gearWon"]
+position = Vector2( 106.735, 12.4303 )
+scale = Vector2( 0.635016, 0.434987 )
+texture = ExtResource( 13 )
+
+[node name="Squishy" type="Sprite" parent="cave2"]
+position = Vector2( -330.11, -79.1855 )
+scale = Vector2( 0.879413, 0.843237 )
+texture = ExtResource( 14 )
+
+[node name="hitBoss" type="Label" parent="cave2/Squishy"]
+visible = false
+margin_left = 42.1133
+margin_top = -42.4823
+margin_right = 214.114
+margin_bottom = 88.5174
+custom_fonts/font = SubResource( 2 )
+text = "-600"
+
+[node name="blue_slime" type="Sprite" parent="cave2"]
+position = Vector2( -204.626, -188.073 )
+texture = ExtResource( 15 )
+
+[node name="hitBlue" type="Label" parent="cave2/blue_slime"]
+visible = false
+margin_left = 64.6511
+margin_top = -29.9519
+margin_right = 236.651
+margin_bottom = 101.048
+custom_fonts/font = SubResource( 2 )
+text = "-600"
+
+[node name="red_slime" type="Sprite" parent="cave2"]
+position = Vector2( -426.928, 15.6595 )
+texture = ExtResource( 15 )
+
+[node name="hitRed" type="Label" parent="cave2/red_slime"]
+visible = false
+margin_left = 62.7301
+margin_top = -12.9942
+margin_right = 234.73
+margin_bottom = 118.005
+custom_fonts/font = SubResource( 2 )
+text = "-600"
+
+[node name="win" type="Label" parent="cave2"]
+visible = false
+margin_left = -98.3496
+margin_top = -93.1607
+margin_right = 107.65
+margin_bottom = -8.16068
+custom_fonts/font = SubResource( 3 )
+text = "Congradulations! Battle won!"
+
+[node name="battleStart" type="Label" parent="cave2"]
+visible = false
+margin_left = -160.909
+margin_top = -101.464
+margin_right = 536.091
+margin_bottom = 108.536
+custom_fonts/font = SubResource( 4 )
+text = "BATTLE START!"
+
+[node name="TextureProgress" type="TextureProgress" parent="cave2"]
+margin_left = -178.652
+margin_top = 6.98483
+margin_right = 153.348
+margin_bottom = 46.9848
+min_value = 1.0
+value = 60.0
+texture_under = ExtResource( 16 )
+texture_progress = ExtResource( 16 )
+tint_under = Color( 1, 0, 0, 1 )
+tint_over = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 0, 0, 1 )
+nine_patch_stretch = true
+
+[node name="hell" type="Sprite" parent="."]
+visible = false
+position = Vector2( 584.121, 329.452 )
+texture = ExtResource( 17 )
+
+[node name="bahamut" type="Sprite" parent="hell"]
+visible = false
+position = Vector2( -197.41, -50.8174 )
+scale = Vector2( 0.92, 0.8875 )
+texture = ExtResource( 18 )
+
+[node name="hitBoss" type="RichTextLabel" parent="hell"]
+visible = false
+margin_left = -27.421
+margin_top = -243.526
+margin_right = 180.579
+margin_bottom = -146.526
+custom_fonts/normal_font = SubResource( 5 )
+text = "-4000"
+
+[node name="treeGuardian" type="Sprite" parent="."]
+visible = false
+position = Vector2( 334.843, 206.775 )
+texture = ExtResource( 19 )
+
+[node name="fighterDead" type="Sprite" parent="."]
+visible = false
+position = Vector2( 984.096, 121.319 )
+texture = ExtResource( 20 )
+
+[node name="fighter" type="AnimatedSprite" parent="."]
+position = Vector2( 901.917, 156.251 )
+frames = SubResource( 6 )
+
+[node name="fighterHit" type="RichTextLabel" parent="fighter"]
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+margin_left = -104.126
+margin_top = -50.6838
+margin_right = 34.8735
+margin_bottom = 62.3162
+custom_fonts/normal_font = SubResource( 7 )
+text = "-700"
+
+[node name="zalteros" type="Control" parent="fighter"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="fighterHit5" type="RichTextLabel" parent="fighter/zalteros"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = -102.54
+margin_top = -50.6838
+margin_right = 36.4602
+margin_bottom = 62.3162
+custom_fonts/normal_font = SubResource( 7 )
+text = "-400"
+
+[node name="archer" type="AnimatedSprite" parent="."]
+position = Vector2( 954.714, 205.386 )
+frames = SubResource( 8 )
+frame = 1
+
+[node name="caster" type="AnimatedSprite" parent="."]
+position = Vector2( 944.379, 289.711 )
+frames = SubResource( 9 )
+frame = 1
+
+[node name="healerDead" type="Sprite" parent="."]
+position = Vector2( 930.907, 373.396 )
+texture = ExtResource( 29 )
+
+[node name="healer" type="AnimatedSprite" parent="."]
+position = Vector2( 933.064, 378.077 )
+frames = SubResource( 10 )
+frame = 1
+
+[node name="menu" type="Sprite" parent="."]
+position = Vector2( 595.172, 555.573 )
+scale = Vector2( 3.68639, 2.92096 )
+texture = ExtResource( 33 )
+
 [node name="bossHP" type="Sprite" parent="menu"]
-position = Vector2( -90.6768, 0.382044 )
+position = Vector2( -90.3762, -0.0172482 )
 scale = Vector2( 0.41129, 0.889696 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
+
+[node name="blueSquishy" type="Sprite" parent="menu/bossHP"]
+position = Vector2( -29.0223, 7.88986 )
+scale = Vector2( 3.34489, 1.12398 )
+texture = ExtResource( 16 )
+
+[node name="blueSquishy2" type="Sprite" parent="menu/bossHP/blueSquishy"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -33.198, 0 )
+scale = Vector2( 1e-005, 1 )
+texture = ExtResource( 16 )
+
+[node name="redSquishy" type="Sprite" parent="menu/bossHP"]
+position = Vector2( -30.1762, 28.0863 )
+scale = Vector2( 3.33287, 1.12398 )
+texture = ExtResource( 16 )
+
+[node name="redSquishy2" type="Sprite" parent="menu/bossHP/redSquishy"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -32.2855, 0 )
+scale = Vector2( 0.00240712, 1 )
+texture = ExtResource( 16 )
+
+[node name="hp_bar" type="Sprite" parent="menu/bossHP"]
+position = Vector2( -27.8315, -13.3285 )
+scale = Vector2( 3.36402, 1.24403 )
+texture = ExtResource( 16 )
+
+[node name="hp_barDead" type="Sprite" parent="menu/bossHP/hp_bar"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -32, 0.02 )
+scale = Vector2( 1e-005, 1.005 )
+texture = ExtResource( 16 )
+
+[node name="Label5" type="Label" parent="menu/bossHP"]
+margin_left = -135.0
+margin_top = -30.0
+margin_right = -37.0
+margin_bottom = -16.0
+text = "Elemetal"
+
+[node name="heart pixel art 16x16" type="Sprite" parent="menu/bossHP"]
+position = Vector2( -143.526, -12.1642 )
+scale = Vector2( 0.659553, 0.384798 )
+texture = ExtResource( 34 )
+
+[node name="bossHPtext" type="RichTextLabel" parent="menu/bossHP"]
+margin_left = 24.0
+margin_top = -30.0
+margin_right = 160.0
+margin_bottom = 10.0
+custom_fonts/normal_font = SubResource( 11 )
+text = "2000/2000"
+
+[node name="hp_bar" type="Sprite" parent="menu/bossHP/bossHPtext"]
+visible = false
+position = Vector2( -84.7388, 57.6112 )
+scale = Vector2( 1.37262, 1 )
+texture = ExtResource( 16 )
+
+[node name="bossHPtext2" type="RichTextLabel" parent="menu/bossHP"]
+margin_left = 39.0622
+margin_top = -8.43089
+margin_right = 157.063
+margin_bottom = 31.5691
+custom_fonts/normal_font = SubResource( 11 )
+text = "600/600"
+
+[node name="hp_bar" type="Sprite" parent="menu/bossHP/bossHPtext2"]
+position = Vector2( -84.7388, 57.6112 )
+scale = Vector2( 1.37262, 1 )
+texture = ExtResource( 16 )
+
+[node name="bossHPtext3" type="RichTextLabel" parent="menu/bossHP"]
+margin_left = 36.1
+margin_top = 10.8679
+margin_right = 154.1
+margin_bottom = 50.8679
+custom_fonts/normal_font = SubResource( 11 )
+text = "600/600"
+
+[node name="hp_bar" type="Sprite" parent="menu/bossHP/bossHPtext3"]
+position = Vector2( -84.7388, 57.6112 )
+scale = Vector2( 1.37262, 1 )
+texture = ExtResource( 16 )
+
+[node name="heart pixel art 16x17" type="Sprite" parent="menu/bossHP"]
+position = Vector2( -145.621, 9.46069 )
+scale = Vector2( 0.615364, 0.354834 )
+texture = ExtResource( 34 )
+
+[node name="heart pixel art 16x18" type="Sprite" parent="menu/bossHP"]
+position = Vector2( -145.621, 29.0854 )
+scale = Vector2( 0.615364, 0.354834 )
+texture = ExtResource( 34 )
+
+[node name="Label" type="Label" parent="menu/bossHP"]
+margin_left = -136.161
+margin_top = -8.0786
+margin_right = -59.1612
+margin_bottom = 5.9214
+text = "Enchanted Staff"
+
+[node name="Label2" type="Label" parent="menu/bossHP"]
+margin_left = -136.161
+margin_top = 12.7594
+margin_right = -59.1612
+margin_bottom = 26.7594
+text = "Enchanted Staff"
 
 [node name="playerHP" type="Sprite" parent="menu"]
-position = Vector2( 63.7262, 0.382095 )
+position = Vector2( 63.3932, -0.458542 )
 scale = Vector2( 0.553595, 0.893873 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
+
+[node name="heart pixel art 16x16" type="Sprite" parent="menu/playerHP"]
+editor/display_folded = true
+position = Vector2( 12.12, -14.4055 )
+scale = Vector2( 0.490011, 0.383 )
+texture = ExtResource( 34 )
+
+[node name="heart pixel art 16x17" type="Sprite" parent="menu/playerHP/heart pixel art 16x16"]
+position = Vector2( -322.895, 87.1693 )
+texture = ExtResource( 34 )
+
+[node name="heart pixel art 16x18" type="Sprite" parent="menu/playerHP/heart pixel art 16x16/heart pixel art 16x17"]
+position = Vector2( -2.45709, -87.1693 )
+texture = ExtResource( 34 )
+
+[node name="heart pixel art 16x19" type="Sprite" parent="menu/playerHP/heart pixel art 16x16/heart pixel art 16x17/heart pixel art 16x18"]
+position = Vector2( 329.035, 84.7139 )
+texture = ExtResource( 34 )
+
+[node name="palaHP" type="Sprite" parent="menu/playerHP"]
+position = Vector2( -81.1288, -14.4055 )
+scale = Vector2( 1.81778, 0.99343 )
+texture = ExtResource( 16 )
+
+[node name="palaHPLost" type="Sprite" parent="menu/playerHP/palaHP"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -24.6801, -0.183823 )
+scale = Vector2( 1e-005, 1 )
+texture = ExtResource( 16 )
+
+[node name="casterHP2" type="Sprite" parent="menu/playerHP"]
+position = Vector2( -80.5272, 18.9804 )
+scale = Vector2( 1.81778, 0.99343 )
+texture = ExtResource( 16 )
+
+[node name="casterHPLost" type="Sprite" parent="menu/playerHP/casterHP2"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -25.6446, 0 )
+scale = Vector2( 1e-005, 1 )
+texture = ExtResource( 16 )
+
+[node name="healerHP2" type="Sprite" parent="menu/playerHP"]
+position = Vector2( 83.1095, 18.5102 )
+scale = Vector2( 1.81778, 0.99343 )
+texture = ExtResource( 16 )
+
+[node name="healerHPLost" type="Sprite" parent="menu/playerHP/healerHP2"]
+self_modulate = Color( 0.0117647, 0, 0, 1 )
+position = Vector2( -15.3317, -0.159348 )
+scale = Vector2( 1e-005, 1 )
+texture = ExtResource( 16 )
+
+[node name="archerHP2" type="Sprite" parent="menu/playerHP"]
+position = Vector2( 80.5749, -14.4055 )
+scale = Vector2( 1.81778, 0.99343 )
+texture = ExtResource( 16 )
+
+[node name="archerHPLost" type="Sprite" parent="menu/playerHP/archerHP2"]
+visible = false
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -28.8254, 0 )
+scale = Vector2( 0.099264, 1 )
+texture = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="menu/playerHP"]
+margin_left = -138.98
+margin_top = -30.4746
+margin_right = -8.97993
+margin_bottom = -16.4746
+text = "Fighter: "
+
+[node name="Label2" type="Label" parent="menu/playerHP"]
+margin_left = 24.305
+margin_top = 1.41071
+margin_right = 154.305
+margin_bottom = 15.4107
+text = "Healer"
+
+[node name="Label3" type="Label" parent="menu/playerHP"]
+margin_left = -138.73
+margin_top = 2.35114
+margin_right = -8.73007
+margin_bottom = 16.3511
+text = "Caster"
+
+[node name="Label4" type="Label" parent="menu/playerHP"]
+margin_left = 23.1019
+margin_top = -31.9752
+margin_right = 153.102
+margin_bottom = -17.9752
+text = "Archer"
+
+[node name="fighterShield" type="Sprite" parent="menu/playerHP"]
+modulate = Color( 0.247059, 0.254902, 0.92549, 1 )
+self_modulate = Color( 0.192157, 0.380392, 0.937255, 1 )
+material = SubResource( 13 )
+position = Vector2( -54.6265, -4.55433 )
+scale = Vector2( 0.978816, 1.08833 )
+texture = ExtResource( 16 )
+
+[node name="shield_bar" type="Sprite" parent="menu/playerHP/fighterShield"]
+visible = false
+position = Vector2( -8.25726, -0.27388 )
+scale = Vector2( 0.721932, 0.879933 )
+texture = ExtResource( 35 )
+
+[node name="Label" type="Label" parent="menu/playerHP/fighterShield"]
+visible = false
+margin_left = 57.0704
+margin_top = -176.521
+margin_right = 97.0704
+margin_bottom = -157.521
+custom_fonts/font = SubResource( 14 )
+text = "+200"
+
+[node name="hp_bar6" type="Sprite" parent="menu/playerHP"]
+modulate = Color( 0.247059, 0.254902, 0.92549, 1 )
+self_modulate = Color( 0.192157, 0.380392, 0.937255, 1 )
+material = SubResource( 13 )
+position = Vector2( -53.455, 28.3848 )
+scale = Vector2( 0.978816, 1.08833 )
+texture = ExtResource( 16 )
+
+[node name="hp_bar7" type="Sprite" parent="menu/playerHP"]
+modulate = Color( 0.247059, 0.254902, 0.92549, 1 )
+self_modulate = Color( 0.192157, 0.380392, 0.937255, 1 )
+material = SubResource( 13 )
+position = Vector2( 109.58, 27.4444 )
+scale = Vector2( 0.978816, 1.08833 )
+texture = ExtResource( 16 )
+
+[node name="hp_bar8" type="Sprite" parent="menu/playerHP"]
+modulate = Color( 0.247059, 0.254902, 0.92549, 1 )
+self_modulate = Color( 0.192157, 0.380392, 0.937255, 1 )
+material = SubResource( 13 )
+position = Vector2( 106.572, -5.47123 )
+scale = Vector2( 0.978816, 1.08833 )
+texture = ExtResource( 16 )
+
+[node name="fighterHP" type="RichTextLabel" parent="menu/playerHP"]
+margin_left = -65.11
+margin_top = -29.1769
+margin_right = 59.89
+margin_bottom = -16.1769
+custom_fonts/normal_font = SubResource( 15 )
+text = "1000/1000"
+
+[node name="healerHP" type="RichTextLabel" parent="menu/playerHP"]
+margin_left = 105.227
+margin_top = 4.02043
+margin_right = 230.227
+margin_bottom = 44.0204
+custom_fonts/normal_font = SubResource( 15 )
+text = "650/650"
+
+[node name="archerHP" type="RichTextLabel" parent="menu/playerHP"]
+margin_left = 104.519
+margin_top = -30.0
+margin_right = 167.519
+margin_bottom = -16.0
+custom_fonts/normal_font = SubResource( 15 )
+text = "700/700"
+
+[node name="casterHP" type="RichTextLabel" parent="menu/playerHP"]
+margin_left = -57.5963
+margin_top = 4.17332
+margin_right = 7.40372
+margin_bottom = 44.1733
+custom_fonts/normal_font = SubResource( 15 )
+text = "650/650"
 
 [node name="actionSelect" type="Sprite" parent="menu"]
+editor/display_folded = true
 visible = false
 position = Vector2( -74.956, 0.641 )
 scale = Vector2( 0.309, 0.888 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 
 [node name="actionSelectContainer" type="VBoxContainer" parent="menu/actionSelect"]
 margin_left = -119.0
@@ -71,12 +661,13 @@ margin_bottom = 22.0
 visible = false
 position = Vector2( 12.0197, 8.08632 )
 scale = Vector2( 1.03344, 0.385533 )
-texture = ExtResource( 10 )
+texture = ExtResource( 36 )
 
 [node name="subClass" type="Sprite" parent="menu"]
+visible = false
 position = Vector2( -74.9565, 0.641464 )
 scale = Vector2( 0.30946, 0.888 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 
 [node name="subClassBack" type="Button" parent="menu/subClass"]
 margin_left = -158.797
@@ -97,12 +688,13 @@ margin_bottom = 33.0
 visible = false
 position = Vector2( -150.475, 20.2188 )
 scale = Vector2( 0.871061, 0.385533 )
-texture = ExtResource( 10 )
+texture = ExtResource( 36 )
 
 [node name="skillSelect" type="Sprite" parent="menu"]
-position = Vector2( 28.4609, 0.627243 )
+visible = false
+position = Vector2( 28.4609, 0.206909 )
 scale = Vector2( 0.322967, 0.887746 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 
 [node name="skillBack" type="Button" parent="menu/skillSelect"]
 margin_left = -148.968
@@ -125,4 +717,52 @@ alignment = 2
 visible = false
 position = Vector2( 213.245, 33.1832 )
 scale = Vector2( 0.834632, 0.385643 )
-texture = ExtResource( 10 )
+texture = ExtResource( 36 )
+
+[node name="selectCharacter" type="Sprite" parent="."]
+visible = false
+position = Vector2( 631.144, 263.355 )
+texture = ExtResource( 33 )
+
+[node name="fighterSelect" type="TextureButton" parent="selectCharacter"]
+margin_left = -138.948
+margin_top = -16.8421
+margin_right = -82.9476
+margin_bottom = 30.1579
+texture_normal = ExtResource( 37 )
+
+[node name="healerSelect" type="TextureButton" parent="selectCharacter"]
+margin_left = 76.842
+margin_top = -23.1579
+margin_right = 132.842
+margin_bottom = 23.8421
+texture_normal = ExtResource( 38 )
+
+[node name="archerSelect" type="TextureButton" parent="selectCharacter"]
+margin_left = -66.316
+margin_top = -17.8948
+margin_right = -10.316
+margin_bottom = 29.1052
+texture_normal = ExtResource( 39 )
+
+[node name="casterSelect" type="TextureButton" parent="selectCharacter"]
+margin_left = -0.368408
+margin_top = -28.579
+margin_right = 71.6316
+margin_bottom = 33.421
+texture_normal = ExtResource( 40 )
+
+[node name="turnInfo" type="Sprite" parent="."]
+visible = false
+position = Vector2( 549.038, 19.1438 )
+scale = Vector2( 1.50977, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="turnText" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 481.0
+margin_top = 9.0
+margin_right = 675.0
+margin_bottom = 41.0
+custom_fonts/normal_font = SubResource( 16 )
+text = "Fighter's turn."

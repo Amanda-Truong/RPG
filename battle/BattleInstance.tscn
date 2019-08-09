@@ -1,0 +1,521 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://battle/BattleInstance.gd" type="Script" id=1]
+[ext_resource path="res://backgrounds/environment_forestbackground.png" type="Texture" id=2]
+[ext_resource path="res://sprites/boss/tree/tree guardian.png" type="Texture" id=3]
+[ext_resource path="res://sprites/fighter/fighter stand3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/fighter/fighter stand4.png" type="Texture" id=5]
+[ext_resource path="res://sprites/fighter/fighter dead.png" type="Texture" id=6]
+[ext_resource path="res://sprites/archer/1.png" type="Texture" id=7]
+[ext_resource path="res://sprites/archer/2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/archer/3.png" type="Texture" id=9]
+[ext_resource path="res://sprites/archer/archer dead.png" type="Texture" id=10]
+[ext_resource path="res://sprites/caster/1.png" type="Texture" id=11]
+[ext_resource path="res://sprites/caster/2.png" type="Texture" id=12]
+[ext_resource path="res://sprites/caster/3.png" type="Texture" id=13]
+[ext_resource path="res://sprites/healer/1.png" type="Texture" id=14]
+[ext_resource path="res://sprites/healer/2.png" type="Texture" id=15]
+[ext_resource path="res://sprites/healer/3.png" type="Texture" id=16]
+[ext_resource path="res://sprites/healer/healer dead.png" type="Texture" id=17]
+[ext_resource path="res://menu/visual/dialogue.png" type="Texture" id=18]
+[ext_resource path="res://menu/visual/portrait.png" type="Texture" id=19]
+[ext_resource path="res://visual components/misc/hp_bar.png" type="Texture" id=20]
+[ext_resource path="res://visual components/misc/shield_bar.png" type="Texture" id=21]
+[ext_resource path="res://visual components/misc/heart pixel art 16x16.png" type="Texture" id=22]
+[ext_resource path="res://fonts/Roboto-Light.ttf" type="DynamicFontData" id=23]
+[ext_resource path="res://menu/visual/select/hand_cursor0000.png" type="Texture" id=24]
+[ext_resource path="res://sprites/fighter/head.png" type="Texture" id=25]
+[ext_resource path="res://sprites/healer/head.png" type="Texture" id=26]
+[ext_resource path="res://sprites/archer/head.png" type="Texture" id=27]
+[ext_resource path="res://sprites/caster/mage dead.png" type="Texture" id=28]
+[ext_resource path="res://fonts/Roboto-Bold.ttf" type="DynamicFontData" id=29]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=5]
+size = 11
+font_data = ExtResource( 23 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 18
+font_data = ExtResource( 29 )
+
+[node name="BattleInstance" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 557.784, 235.575 )
+scale = Vector2( 1.28215, 1.13126 )
+texture = ExtResource( 2 )
+
+[node name="boss" type="Sprite" parent="."]
+position = Vector2( 319.664, 241.498 )
+texture = ExtResource( 3 )
+
+[node name="fighter" type="AnimatedSprite" parent="."]
+position = Vector2( 890.424, 154.577 )
+frames = SubResource( 1 )
+animation = "attack"
+frame = 1
+
+[node name="archer" type="AnimatedSprite" parent="."]
+position = Vector2( 954.761, 220.06 )
+frames = SubResource( 2 )
+animation = "attack"
+
+[node name="caster" type="AnimatedSprite" parent="."]
+position = Vector2( 961.544, 310.664 )
+frames = SubResource( 3 )
+animation = "attack"
+
+[node name="healer" type="AnimatedSprite" parent="."]
+position = Vector2( 916.444, 380.023 )
+frames = SubResource( 4 )
+animation = "attack"
+
+[node name="menu" type="Sprite" parent="."]
+position = Vector2( 595.172, 555.573 )
+scale = Vector2( 3.68639, 2.92096 )
+texture = ExtResource( 18 )
+
+[node name="bossHP" type="Sprite" parent="menu"]
+position = Vector2( -95.0877, -0.0172482 )
+scale = Vector2( 0.381658, 0.889696 )
+texture = ExtResource( 19 )
+
+[node name="boss" type="Control" parent="menu/bossHP"]
+margin_left = -144.0
+margin_top = -32.0
+margin_right = 145.0
+margin_bottom = 33.0
+
+[node name="bossHealth" type="TextureProgress" parent="menu/bossHP/boss"]
+margin_left = 24.5463
+margin_top = 26.7113
+margin_right = 207.546
+margin_bottom = 35.7113
+texture_under = ExtResource( 20 )
+texture_progress = ExtResource( 20 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 1, 0, 0, 1 )
+nine_patch_stretch = true
+
+[node name="bossShield" type="TextureProgress" parent="menu/bossHP/boss"]
+margin_left = 103.0
+margin_top = 36.2304
+margin_right = 208.0
+margin_bottom = 44.2304
+texture_under = ExtResource( 21 )
+texture_progress = ExtResource( 21 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 0.133333, 1, 1 )
+nine_patch_stretch = true
+
+[node name="heart pixel art 16x17" type="Sprite" parent="menu/bossHP/boss"]
+position = Vector2( 10.1215, 31.5107 )
+scale = Vector2( 1.16368, 0.574005 )
+texture = ExtResource( 22 )
+
+[node name="bossName" type="Label" parent="menu/bossHP/boss"]
+margin_left = 25.0
+margin_top = 14.0
+margin_right = 75.0
+margin_bottom = 28.0
+text = "Boss:"
+
+[node name="HP" type="Label" parent="menu/bossHP/boss/bossName"]
+margin_left = 44.2518
+margin_top = 0.494415
+margin_right = 113.252
+margin_bottom = 14.4944
+text = "2000/2000"
+
+[node name="playerHP" type="Sprite" parent="menu"]
+position = Vector2( 58.5389, -0.458542 )
+scale = Vector2( 0.584125, 0.893873 )
+texture = ExtResource( 19 )
+
+[node name="fighter" type="Control" parent="menu/playerHP"]
+margin_left = -153.0
+margin_top = -31.0
+margin_right = -136.0
+margin_bottom = -21.0
+
+[node name="fighterHealth" type="TextureProgress" parent="menu/playerHP/fighter"]
+margin_left = 17.3046
+margin_top = 12.979
+margin_right = 128.305
+margin_bottom = 20.979
+min_value = 1.0
+value = 1.0
+rounded = true
+texture_under = ExtResource( 20 )
+texture_progress = ExtResource( 20 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_over = Color( 0, 0, 0, 1 )
+tint_progress = Color( 1, 0, 0, 1 )
+nine_patch_stretch = true
+
+[node name="fighterShield" type="TextureProgress" parent="menu/playerHP/fighter"]
+margin_left = 64.0249
+margin_top = 21.3055
+margin_right = 128.025
+margin_bottom = 29.3055
+texture_under = ExtResource( 21 )
+texture_progress = ExtResource( 21 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0.109804, 0.101961, 0.717647, 1 )
+
+[node name="heart pixel art 16x16" type="Sprite" parent="menu/playerHP/fighter"]
+position = Vector2( 8.73095, 17.526 )
+scale = Vector2( 0.760331, 0.571323 )
+texture = ExtResource( 22 )
+
+[node name="fighterName" type="Label" parent="menu/playerHP/fighter"]
+margin_left = 16.873
+margin_top = 0.304611
+margin_right = 66.873
+margin_bottom = 17.3046
+text = "Fighter:"
+
+[node name="health" type="Label" parent="menu/playerHP/fighter/fighterName"]
+margin_left = 52.0018
+margin_top = -0.408035
+margin_right = 105.002
+margin_bottom = 16.592
+custom_fonts/font = SubResource( 5 )
+text = "300/300"
+
+[node name="archer" type="Control" parent="menu/playerHP"]
+margin_right = 5.0
+margin_bottom = 29.0
+
+[node name="heart pixel art 16x17" type="Sprite" parent="menu/playerHP/archer"]
+position = Vector2( -144.421, 17.8854 )
+scale = Vector2( 0.760331, 0.571323 )
+texture = ExtResource( 22 )
+
+[node name="archerName" type="Label" parent="menu/playerHP/archer"]
+margin_left = -135.467
+margin_top = 2.06226
+margin_right = -87.4666
+margin_bottom = 16.0623
+text = "Archer:"
+
+[node name="health" type="Label" parent="menu/playerHP/archer/archerName"]
+margin_left = 50.5888
+margin_top = -0.712524
+margin_right = 103.589
+margin_bottom = 16.2875
+custom_fonts/font = SubResource( 5 )
+text = "300/300"
+
+[node name="archerHealth" type="TextureProgress" parent="menu/playerHP/archer"]
+margin_left = -136.173
+margin_top = 13.9702
+margin_right = -25.1728
+margin_bottom = 21.9702
+min_value = 1.0
+value = 1.0
+rounded = true
+texture_under = ExtResource( 20 )
+texture_progress = ExtResource( 20 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_over = Color( 0, 0, 0, 1 )
+tint_progress = Color( 1, 0, 0, 1 )
+nine_patch_stretch = true
+
+[node name="archerShield" type="TextureProgress" parent="menu/playerHP/archer"]
+margin_left = -88.5559
+margin_top = 21.7604
+margin_right = -24.5559
+margin_bottom = 29.7604
+texture_under = ExtResource( 21 )
+texture_progress = ExtResource( 21 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0.109804, 0.101961, 0.717647, 1 )
+
+[node name="healer" type="Control" parent="menu/playerHP"]
+margin_left = -6.82187
+margin_top = 0.217865
+margin_right = 33.1781
+margin_bottom = 40.2179
+
+[node name="healerName" type="Label" parent="menu/playerHP/healer"]
+margin_left = 24.0323
+margin_top = 1.61794
+margin_right = 72.0323
+margin_bottom = 15.6179
+text = "Healer:"
+
+[node name="health" type="Label" parent="menu/playerHP/healer/healerName"]
+margin_left = 49.0194
+margin_top = -0.30162
+margin_right = 102.019
+margin_bottom = 16.6984
+custom_fonts/font = SubResource( 5 )
+text = "300/300"
+
+[node name="healerShield" type="TextureProgress" parent="menu/playerHP/healer"]
+margin_left = 70.523
+margin_top = 21.8389
+margin_right = 134.523
+margin_bottom = 29.8389
+texture_under = ExtResource( 21 )
+texture_progress = ExtResource( 21 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0.109804, 0.101961, 0.717647, 1 )
+
+[node name="healerHealth" type="TextureProgress" parent="menu/playerHP/healer"]
+margin_left = 23.9568
+margin_top = 13.5525
+margin_right = 134.957
+margin_bottom = 21.5525
+min_value = 1.0
+value = 1.0
+rounded = true
+texture_under = ExtResource( 20 )
+texture_progress = ExtResource( 20 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_over = Color( 0, 0, 0, 1 )
+tint_progress = Color( 1, 0, 0, 1 )
+nine_patch_stretch = true
+
+[node name="caster" type="Control" parent="menu/playerHP"]
+margin_left = -8.80579
+margin_top = 0.435715
+margin_right = 107.194
+margin_bottom = 9.43571
+
+[node name="heart pixel art 16x18" type="Sprite" parent="menu/playerHP/caster"]
+position = Vector2( 17.8747, -14.3698 )
+scale = Vector2( 0.760331, 0.571323 )
+texture = ExtResource( 22 )
+
+[node name="heart pixel art 16x19" type="Sprite" parent="menu/playerHP/caster"]
+position = Vector2( 18.7031, 17.5848 )
+scale = Vector2( 0.760331, 0.571323 )
+texture = ExtResource( 22 )
+
+[node name="casterName" type="Label" parent="menu/playerHP/caster"]
+margin_left = 24.892
+margin_top = -30.7025
+margin_right = 72.892
+margin_bottom = -16.7025
+text = "Caster:"
+
+[node name="health" type="Label" parent="menu/playerHP/caster/casterName"]
+margin_left = 48.7012
+margin_top = 0.0152283
+margin_right = 101.701
+margin_bottom = 17.0152
+custom_fonts/font = SubResource( 5 )
+text = "300/300"
+
+[node name="casterShield" type="TextureProgress" parent="menu/playerHP/caster"]
+margin_left = 73.2294
+margin_top = -10.1675
+margin_right = 137.229
+margin_bottom = -2.1675
+texture_under = ExtResource( 21 )
+texture_progress = ExtResource( 21 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0.109804, 0.101961, 0.717647, 1 )
+
+[node name="casterHealth" type="TextureProgress" parent="menu/playerHP/caster"]
+margin_left = 26.4989
+margin_top = -17.59
+margin_right = 137.499
+margin_bottom = -9.59003
+min_value = 1.0
+value = 1.0
+rounded = true
+texture_under = ExtResource( 20 )
+texture_progress = ExtResource( 20 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_over = Color( 0, 0, 0, 1 )
+tint_progress = Color( 1, 0, 0, 1 )
+nine_patch_stretch = true
+
+[node name="actionSelect" type="Sprite" parent="menu"]
+editor/display_folded = true
+visible = false
+position = Vector2( -74.956, 0.641 )
+scale = Vector2( 0.309, 0.888 )
+texture = ExtResource( 19 )
+
+[node name="actionSelectContainer" type="VBoxContainer" parent="menu/actionSelect"]
+margin_left = -119.0
+margin_top = -21.0
+margin_right = 119.0
+margin_bottom = 22.0
+
+[node name="hand" type="Sprite" parent="menu/actionSelect/actionSelectContainer"]
+visible = false
+position = Vector2( 12.0197, 8.08632 )
+scale = Vector2( 1.03344, 0.385533 )
+texture = ExtResource( 24 )
+
+[node name="subClass" type="Sprite" parent="menu"]
+visible = false
+position = Vector2( -74.9565, 0.641464 )
+scale = Vector2( 0.30946, 0.888 )
+texture = ExtResource( 19 )
+
+[node name="subClassBack" type="Button" parent="menu/subClass"]
+margin_left = -158.797
+margin_top = 17.8544
+margin_right = -117.797
+margin_bottom = 37.8544
+focus_mode = 0
+text = "<"
+flat = true
+
+[node name="subClassContainer" type="VBoxContainer" parent="menu/subClass"]
+margin_left = -112.0
+margin_top = -33.0
+margin_right = 121.0
+margin_bottom = 33.0
+
+[node name="hand2" type="Sprite" parent="menu/subClass/subClassContainer"]
+visible = false
+position = Vector2( -150.475, 20.2188 )
+scale = Vector2( 0.871061, 0.385533 )
+texture = ExtResource( 24 )
+
+[node name="skillSelect" type="Sprite" parent="menu"]
+visible = false
+position = Vector2( 28.4609, 0.206909 )
+scale = Vector2( 0.322967, 0.887746 )
+texture = ExtResource( 19 )
+
+[node name="skillBack" type="Button" parent="menu/skillSelect"]
+margin_left = -148.968
+margin_top = 17.5606
+margin_right = -128.968
+margin_bottom = 37.5606
+text = "<"
+flat = true
+
+[node name="scrollContainer" type="ScrollContainer" parent="menu/skillSelect"]
+margin_left = -89.0
+margin_top = -34.0
+margin_right = 155.0
+margin_bottom = 34.0
+
+[node name="skillList" type="VBoxContainer" parent="menu/skillSelect/scrollContainer"]
+alignment = 2
+
+[node name="hand3" type="Sprite" parent="menu/skillSelect/scrollContainer/skillList"]
+visible = false
+position = Vector2( 213.245, 33.1832 )
+scale = Vector2( 0.834632, 0.385643 )
+texture = ExtResource( 24 )
+
+[node name="selectCharacter" type="Sprite" parent="."]
+visible = false
+position = Vector2( 631.144, 263.355 )
+texture = ExtResource( 18 )
+
+[node name="fighterSelect" type="TextureButton" parent="selectCharacter"]
+margin_left = -138.948
+margin_top = -16.8421
+margin_right = -82.9476
+margin_bottom = 30.1579
+texture_normal = ExtResource( 25 )
+
+[node name="healerSelect" type="TextureButton" parent="selectCharacter"]
+margin_left = 76.842
+margin_top = -23.1579
+margin_right = 132.842
+margin_bottom = 23.8421
+texture_normal = ExtResource( 26 )
+
+[node name="archerSelect" type="TextureButton" parent="selectCharacter"]
+margin_left = -66.316
+margin_top = -17.8948
+margin_right = -10.316
+margin_bottom = 29.1052
+texture_normal = ExtResource( 27 )
+
+[node name="casterSelect" type="TextureButton" parent="selectCharacter"]
+margin_left = -0.368408
+margin_top = -28.579
+margin_right = 71.6316
+margin_bottom = 33.421
+texture_normal = ExtResource( 28 )
+
+[node name="turnInfo" type="Sprite" parent="."]
+position = Vector2( 606.174, 20.5042 )
+scale = Vector2( 1.50977, 0.5 )
+texture = ExtResource( 19 )
+
+[node name="turnText" type="RichTextLabel" parent="."]
+margin_left = 537.0
+margin_top = 9.0
+margin_right = 731.0
+margin_bottom = 32.0
+custom_fonts/normal_font = SubResource( 6 )
+text = "Fighter's turn."
+
+[node name="battleEnd" type="Sprite" parent="."]
+visible = false
+position = Vector2( 609.776, 228.252 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+
+[node name="battleText" type="RichTextLabel" parent="battleEnd"]
+margin_left = -122.0
+margin_top = -14.0
+margin_right = 121.0
+margin_bottom = 17.0

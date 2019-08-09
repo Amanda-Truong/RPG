@@ -12,5 +12,3 @@ func _ready():
 	scene.connect("whoseTurn", self, "signal_handler")
 	pass 
 	
-func signal_handler():
-	print("ANAL")
